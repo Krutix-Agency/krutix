@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Krutix - Digital Systems</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Specific styles for about page */
+        .about-hero {
+            padding: 12vh 5% 1rem;
+            text-align: center;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 1rem auto 3rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        .about-visual {
+            height: 400px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .visual-brand {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: 0.5rem;
+            color: #fff;
+            position: relative;
+            z-index: 5;
+            text-shadow: 0 0 20px rgba(0, 243, 255, 0.5);
+            animation: brand-glow 4s ease-in-out infinite alternate, float 6s ease-in-out infinite;
+            background: linear-gradient(90deg, #fff, var(--accent-cyan));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @keyframes brand-glow {
+            from {
+                text-shadow: 0 0 10px rgba(0, 243, 255, 0.5), 0 0 20px rgba(0, 243, 255, 0.2);
+                transform: scale(1);
+            }
+
+            to {
+                text-shadow: 0 0 30px rgba(0, 243, 255, 0.8), 0 0 50px rgba(0, 243, 255, 0.4);
+                transform: scale(1.05);
+            }
+        }
+
+        .creativity-section {
+            text-align: center;
+            padding: 6rem 5%;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .creativity-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .about-hero {
+                padding: 10vh 5% 1.5rem;
+                width: 100%;
+                text-align: center;
+            }
+
+            .about-hero .headline {
+                font-size: 2.2rem;
+                margin: 0 auto 1.5rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                margin: 2rem auto;
+                text-align: center;
+                padding: 0 7%;
+            }
+
+            .about-text h2 {
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem !important;
+                text-align: center;
+            }
+
+            .about-text p {
+                text-align: center !important;
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .about-visual {
+                height: 250px;
+                order: -1;
+                width: 90%;
+                margin: 0 auto;
+            }
+
+            .visual-brand {
+                font-size: 1.8rem;
+                letter-spacing: 0.3rem;
+            }
+
+            .cta-section .cta-headline {
+                font-size: 2.2rem !important;
+            }
+
+            .cta-section .subtext {
+                font-size: 1rem !important;
+                margin-bottom: 2rem !important;
+                padding: 0 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background-globes">
+        <div class="globe globe-1"></div>
+        <div class="globe globe-2"></div>
+        <div class="globe globe-3"></div>
+    </div>
+
+    <nav class="glass-nav">
+        <a href="index.html" class="logo">KRUTIX</a>
+
+        <div class="nav-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html#services" class="nav-link">Solutions</a>
+            <a href="about.html" class="nav-link" style="color:#fff;">About</a>
+            <a href="contact.html" class="cta-button-small">Get in Touch</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="about-hero">
+            <h1 class="headline">Who We <span class="gradient-text">Are</span></h1>
+            <p class="subtext">Architects of the intelligent digital future.</p>
+        </section>
+
+        <section class="about-content">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2 style="color: #fff;">Building the Future</h2>
+                    <p style="margin-bottom: 1.5rem;">
+                        At Krutix, we don't just write code; we engineer digital intelligence. We saw a world where
+                        businesses were suffocating under manual processes and outdated websites. We decided to change
+                        that.
+                    </p>
+                    <p>
+                        We are a team of visionaries, developers, and AI architects dedicated to creating
+                        self-sustaining digital ecosystems. Our mission is to liberate human creativity by automating
+                        the mundane.
+                    </p>
+                </div>
+                <div class="about-visual">
+                    <div class="visual-brand">KRUTIX</div>
+                    <!-- Abstract representation of system -->
+                    <div class="geo-shape shape-triangle" style="animation: rotate-float 10s linear infinite;"></div>
+                    <div class="cta-orb orb-1" style="width:200px; height:200px; filter:blur(60px);"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section"
+            style="min-height: 50vh; display:flex; align-items:center; justify-content:center; text-align: center;">
+            <div class="cta-content" style="max-width: 800px; margin: 0 auto; padding: 0 5%;">
+                <h2 class="cta-headline">
+                    The future is autonomous.<br>
+                    <span class="gradient-text">Are you ready to lead it?</span>
+                </h2>
+                <p class="subtext" style="opacity: 0.8; text-align: center; margin: 0 auto 3rem; max-width: 600px;">
+                    Don't just adapt to change. Engineer it. Let's build a digital ecosystem that works as hard as you
+                    do.
+                </p>
+                <a href="contact.html" class="cta-btn-minimal">Ignite Your Growth</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2>KRUTIX</h2>
+                <p>Building the digital nervous system for modern enterprises.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Solutions</h4>
+                <a href="index.html#services">Web Apps</a>
+                <a href="index.html#services">AI Agents</a>
+                <a href="index.html#services">Mobile Apps</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="about.html">About</a>
+                <a href="careers.html">Careers</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Social</h4>
+                <a href="https://instagram.com/krutixagency" target="_blank">Instagram</a>
+                <a href="https://www.linkedin.com/company/krutixagency/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/orgs/Krutix-Agency/" target="_blank">GitHub</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Krutix Agency. All rights reserved.
+        </div>
+    </footer>
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>

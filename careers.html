@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - Krutix Agency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .careers-hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 5%;
+        }
+
+        .careers-content {
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .careers-message {
+            font-size: 1.5rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .careers-hero {
+                min-height: 70vh;
+            }
+
+            .careers-message {
+                font-size: 1.2rem;
+            }
+
+            .careers-content {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background-globes">
+        <div class="globe globe-1"></div>
+        <div class="globe globe-2"></div>
+        <div class="globe globe-3"></div>
+    </div>
+
+    <nav class="glass-nav">
+        <a href="index.html" class="logo">KRUTIX</a>
+
+        <div class="nav-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html#services" class="nav-link">Solutions</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="contact.html" class="cta-button-small">Get in Touch</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="careers-hero">
+            <div class="careers-content reveal-text active">
+                <h1 class="headline" style="margin-bottom: 2rem;">Join Our <span class="gradient-text">Journey</span>
+                </h1>
+                <p class="careers-message">
+                    We are soon announce lots of job updates here. For more details surely check weekly and follow us on
+                    LinkedIn to stay updated.
+                </p>
+                <a href="https://www.linkedin.com/company/krutixagency/" target="_blank" class="cta-btn-minimal"
+                    style="background: rgba(0, 243, 255, 0.1); border-color: var(--accent-cyan);">
+                    Follow on LinkedIn
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2>KRUTIX</h2>
+                <p>Building the digital nervous system for modern enterprises.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Solutions</h4>
+                <a href="index.html#services">Web Apps</a>
+                <a href="index.html#services">AI Agents</a>
+                <a href="index.html#services">Mobile Apps</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="about.html">About</a>
+                <a href="careers.html">Careers</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Social</h4>
+                <a href="https://instagram.com/krutixagency" target="_blank">Instagram</a>
+                <a href="https://www.linkedin.com/company/krutixagency/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/orgs/Krutix-Agency/" target="_blank">GitHub</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Krutix Agency. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Simple reveal animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const content = document.querySelector('.careers-content');
+            content.style.opacity = '1';
+            content.style.transform = 'translateY(0)';
+        });
+    </script>
+</body>
+
+</html>

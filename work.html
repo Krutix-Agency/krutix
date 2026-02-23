@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Work - Krutix</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .work-hero {
+            padding: 20vh 5% 10vh;
+            text-align: center;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .placeholder-card {
+            background: rgba(20, 20, 35, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+        }
+
+        .placeholder-card:hover {
+            background: rgba(20, 20, 35, 0.6);
+            border-color: rgba(255, 255, 255, 0.2);
+            color: var(--accent-cyan);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background-globes">
+        <div class="globe globe-1"></div>
+        <div class="globe globe-2"></div>
+        <div class="globe globe-3"></div>
+    </div>
+
+    <nav class="glass-nav">
+        <a href="index.html" class="logo">KRUTIX</a>
+
+        <div class="nav-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html#services" class="nav-link">Solutions</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="contact.html" class="cta-button-small">Get in Touch</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="work-hero">
+            <h1 class="headline">Selected <span class="gradient-text">Projects</span></h1>
+            <p class="subtext" style="max-width: 600px; margin: 0 auto 4rem;">
+                A showcase of intelligent systems and digital ecosystems we've engineered. Case studies coming soon.
+            </p>
+
+            <div class="work-grid">
+                <div class="placeholder-card">Project Alpha</div>
+                <div class="placeholder-card">System Beta</div>
+                <div class="placeholder-card">Neural Net X</div>
+            </div>
+
+            <div style="margin-top: 4rem;">
+                <a href="contact.html" class="primary-btn">Start Your Project</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2>KRUTIX</h2>
+                <p>Building the digital nervous system for modern enterprises.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Solutions</h4>
+                <a href="index.html#services">Web Apps</a>
+                <a href="index.html#services">AI Agents</a>
+                <a href="index.html#services">Mobile Apps</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="about.html">About</a>
+                <a href="careers.html">Careers</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Social</h4>
+                <a href="https://instagram.com/krutixagency" target="_blank">Instagram</a>
+                <a href="https://www.linkedin.com/company/krutixagency/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/orgs/Krutix-Agency/" target="_blank">GitHub</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Krutix Agency. All rights reserved.
+        </div>
+    </footer>
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>
