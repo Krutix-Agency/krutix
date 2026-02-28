@@ -169,14 +169,14 @@
     </nav>
 
     <main>
-        <section class="about-hero">
+        <section class="about-hero reveal-text">
             <h1 class="headline">Who We <span class="gradient-text">Are</span></h1>
             <p class="subtext">Architects of the intelligent digital future.</p>
         </section>
 
         <section class="about-content">
             <div class="about-grid">
-                <div class="about-text">
+                <div class="about-text reveal-text">
                     <h2 style="color: #fff;">Building the Future</h2>
                     <p style="margin-bottom: 1.5rem;">
                         At Krutix, we don't just write code; we engineer digital intelligence. We saw a world where
@@ -198,16 +198,15 @@
             </div>
         </section>
 
-        <section class="cta-section"
-            style="min-height: 50vh; display:flex; align-items:center; justify-content:center; text-align: center;">
-            <div class="cta-content" style="max-width: 800px; margin: 0 auto; padding: 0 5%;">
+        <section class="about-cta">
+            <div class="cta-content reveal-text">
                 <h2 class="cta-headline">
-                    The future is autonomous.<br>
-                    <span class="gradient-text">Are you ready to lead it?</span>
+                    The future is <span class="gradient-text">autonomous.</span><br>
+                    Are you ready to lead it?
                 </h2>
-                <p class="subtext" style="opacity: 0.8; text-align: center; margin: 0 auto 3rem; max-width: 600px;">
-                    Don't just adapt to change. Engineer it. Let's build a digital ecosystem that works as hard as you
-                    do.
+                <p class="subtext">
+                    Don't just adapt to the future. Engineer it. <br>
+                    We build self-evolving digital ecosystems that scale with your vision and automate your growth.
                 </p>
                 <a href="contact.html" class="cta-btn-minimal">Ignite Your Growth</a>
             </div>
@@ -234,8 +233,8 @@
             </div>
             <div class="footer-col">
                 <h4>Social</h4>
-                <a href="https://instagram.com/krutixagency" target="_blank">Instagram</a>
-                <a href="https://www.linkedin.com/company/krutixagency/" target="_blank">LinkedIn</a>
+                <a href="https://instagram.com/krutix.ai" target="_blank">Instagram</a>
+                <a href="https://www.linkedin.com/company/krutix/" target="_blank">LinkedIn</a>
                 <a href="https://github.com/orgs/Krutix-Agency/" target="_blank">GitHub</a>
             </div>
         </div>
@@ -249,6 +248,25 @@
 
         mobileMenu.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+        });
+
+        // Scroll Reveal Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-text').forEach(el => {
+            observer.observe(el);
         });
     </script>
 </body>

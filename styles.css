@@ -312,15 +312,51 @@ body {
 
 .glass-badge {
     padding: 0.5rem 1rem;
-    background: rgba(0, 243, 255, 0.1);
-    border: 1px solid rgba(0, 243, 255, 0.3);
-    border-radius: 20px;
+    background: rgba(0, 243, 255, 0.05);
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    border-radius: 50px;
     color: var(--accent-cyan);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 600;
-    box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    position: relative;
+    overflow: hidden;
     display: inline-block;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.glass-badge::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(transparent,
+            var(--accent-cyan),
+            transparent 20%);
+    animation: rotate-glow 4s linear infinite;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+.glass-badge::before {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    background: var(--bg-dark);
+    border-radius: 50px;
+    z-index: -1;
+}
+
+@keyframes rotate-glow {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .badge-fade {
@@ -1396,4 +1432,76 @@ body {
 
 .delay-300 {
     transition-delay: 0.3s;
+}
+/* About CTA Section */
+.about-cta {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 8rem 5%;
+    background: radial-gradient(circle at center, rgba(0, 243, 255, 0.05) 0%, transparent 70%);
+}
+
+.about-cta::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150%;
+    height: 150%;
+    background-image: 
+        radial-gradient(circle at 30% 30%, rgba(188, 19, 254, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 70% 70%, rgba(0, 243, 255, 0.1) 0%, transparent 40%);
+    z-index: 1;
+    animation: pulse-glow 15s infinite alternate;
+}
+
+.about-cta .cta-content {
+    max-width: 900px;
+    position: relative;
+    z-index: 10;
+}
+
+.about-cta .cta-headline {
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    margin-bottom: 2rem;
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -2px;
+}
+
+.about-cta .subtext {
+    opacity: 0.9;
+    margin: 0 auto 3.5rem;
+    max-width: 750px;
+    color: var(--text-muted);
+    font-size: 1.25rem;
+    line-height: 1.8;
+}
+
+.about-cta .cta-btn-minimal {
+    padding: 1.3rem 3.5rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background: transparent;
+    border: 1px solid var(--accent-cyan);
+    color: #fff;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: inline-block;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
+}
+
+.about-cta .cta-btn-minimal:hover {
+    background: var(--accent-cyan);
+    color: #000;
+    box-shadow: 0 0 40px rgba(0, 243, 255, 0.4);
+    transform: translateY(-5px) scale(1.05);
 }
