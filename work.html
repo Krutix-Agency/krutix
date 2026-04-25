@@ -2,134 +2,281 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krutix</title>
-    <link rel="icon" type="image/png" href="krutix.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        .work-hero {
-            padding: 20vh 5% 10vh;
-            text-align: center;
-            min-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .work-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .placeholder-card {
-            background: rgba(20, 20, 35, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            aspect-ratio: 16/9;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: rgba(255, 255, 255, 0.2);
-            transition: all 0.3s;
-        }
-
-        .placeholder-card:hover {
-            background: rgba(20, 20, 35, 0.6);
-            border-color: rgba(255, 255, 255, 0.2);
-            color: var(--accent-cyan);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>KRUTIX</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="background-globes">
-        <div class="globe globe-1"></div>
-        <div class="globe globe-2"></div>
-        <div class="globe globe-3"></div>
+
+  <!-- KRUTIX INTRO -->
+  <div id="krutix-intro">
+    <div class="ki-grid"></div>
+    <div class="ki-glow"></div>
+    <div class="ki-scan"></div>
+    <div class="ki-corners"><span></span><span></span><span></span><span></span></div>
+    <div class="ki-word-wrap">
+      <div style="position:relative;display:inline-block">
+        <div class="ki-outline">KRUTIX</div>
+        <div class="ki-fill-wrap" id="ki-fill">
+          <div class="ki-filled">KRUTIX</div>
+        </div>
+      </div>
     </div>
+    <div class="ki-sub">Digital Systems Studio</div>
+    <div class="ki-status">Systems Online</div>
+    <div class="ki-bar-wrap">
+      <div class="ki-bar" id="ki-bar"></div>
+    </div>
+  </div>
 
-    <nav class="glass-nav">
-        <a href="index.html" class="logo">KRUTIX</a>
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="logo" href="index.html">KRU<span>T</span>IX</div>
+    <ul class="nav-links">
+      <li><a href="index.html" id="nav-home">Home</a></li>
+      <li><a href="index.html#services" id="nav-solutions">Solutions</a></li>
+      <li><a href="work.html" id="nav-work">Work</a></li>
+      <li><a href="about.html" id="nav-about">About</a></li>
+      <li><a href="careers.html" id="nav-careers">Careers</a></li>
+    </ul>
+    <button class="nav-cta" onclick="window.location.href='contact.html'">Get in Touch</button>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="index.html#services">Solutions</a>
+    <a href="work.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="careers.html">Careers</a>
+    <a href="contact.html">Get in Touch</a>
+  </div>
 
-        <div class="nav-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+  <!-- WORK -->
+  <div class="page" id="page-work">
+    <div class="work-hero">
+      <div class="grid-bg"></div>
+      <div class="glow-orb orb1"></div>
+      <p class="page-eyebrow">Case Studies</p>
+      <h1 class="page-title">Systems we've<br><span class="stroke">shipped.</span></h1>
+    </div>
+    <div class="work-body">
+      <div class="filter-row">
+        <button class="filt active" onclick="filterWork(this,'all')">All Projects</button>
+        <button class="filt" onclick="filterWork(this,'web')">Web Apps</button>
+        <button class="filt" onclick="filterWork(this,'ai')">AI Agents</button>
+        <button class="filt" onclick="filterWork(this,'mobile')">Mobile</button>
+      </div>
+      <div class="work-grid" id="work-grid">
+        <div class="wproject" data-cat="web" style="border:1px solid rgba(0,255,209,.18);grid-column:1/-1">
+          <div class="wproject-num">01</div>
+          <div
+            style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:6px">
+            <div class="wproject-tag" style="margin-bottom:0"><span>⚡</span>Web Application · Featured Client</div>
+            <a href="https://techfuel.in" target="_blank"
+              style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--cyan);text-decoration:none;border:1px solid rgba(0,255,209,.3);padding:6px 14px;border-radius:2px;transition:background .2s;white-space:nowrap"
+              onmouseover="this.style.background='rgba(0,255,209,.1)'"
+              onmouseout="this.style.background='transparent'">Visit Live Site →</a>
+          </div>
+          <div class="wproject-name">TechFuel — Tech Recommendation & Gadget Blog</div>
+          <div class="wproject-desc">Built a full-featured tech media web platform for TechFuel — a destination where
+            users get expert recommendations before buying tech products, plus a rich blog covering mobile tech leaks,
+            upcoming gadget rumors, and new product launches. Features a smart recommendation engine, category-based
+            filtering, a CMS-powered blog system for real-time news publishing, and a newsletter for tech enthusiasts.
+          </div>
+          <div
+            style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:20px 0 16px">
+            <div style="background:var(--bg3);border:1px solid var(--border2);border-radius:4px;padding:16px">
+              <div style="font-size:22px;font-weight:800;color:var(--cyan);letter-spacing:-1px">50K+</div>
+              <div
+                style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);margin-top:4px">
+                Monthly Readers</div>
+            </div>
+            <div style="background:var(--bg3);border:1px solid var(--border2);border-radius:4px;padding:16px">
+              <div style="font-size:22px;font-weight:800;color:var(--cyan);letter-spacing:-1px">200+</div>
+              <div
+                style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);margin-top:4px">
+                Blog Posts</div>
+            </div>
+            <div style="background:var(--bg3);border:1px solid var(--border2);border-radius:4px;padding:16px">
+              <div style="font-size:22px;font-weight:800;color:var(--cyan);letter-spacing:-1px">95%</div>
+              <div
+                style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);margin-top:4px">
+                Recommendation Accuracy</div>
+            </div>
+            <div style="background:var(--bg3);border:1px solid var(--border2);border-radius:4px;padding:16px">
+              <div style="font-size:22px;font-weight:800;color:var(--cyan);letter-spacing:-1px">4.8★</div>
+              <div
+                style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);margin-top:4px">
+                User Rating</div>
+            </div>
+          </div>
+          <div class="wproject-stack"><span class="wstack">Next.js</span><span class="wstack">Recommendation
+              Engine</span><span class="wstack">CMS Blog</span><span class="wstack">SEO Optimized</span><span
+              class="wstack">Newsletter</span><span class="wstack">Mobile-First</span></div>
+          <div class="wproject-line"></div>
+        </div>
+        <div class="wproject" data-cat="ai">
+          <div class="wproject-num">02</div>
+          <div class="wproject-tag">AI Agent</div>
+          <div class="wproject-name">NexusBot — Support Automation</div>
+          <div class="wproject-desc">Autonomous customer support agent handling 12,000+ daily queries with 94%
+            resolution rate and zero human escalation for tier-1 issues.</div>
+          <div class="wproject-stack"><span class="wstack">GPT-4</span><span class="wstack">RAG</span><span
+              class="wstack">FastAPI</span><span class="wstack">Redis</span></div><a href="#" onclick="return false"
+            style="display:inline-block;margin-top:16px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);text-decoration:none;border:1px solid var(--border2);padding:5px 12px;border-radius:2px">Link
+            Updated Soon</a>
+          <div class="wproject-line"></div>
+        </div>
+        <div class="wproject" data-cat="web">
+          <div class="wproject-num">03</div>
+          <div class="wproject-tag">Web Application</div>
+          <div class="wproject-name">Orbital — SaaS Analytics Platform</div>
+          <div class="wproject-desc">End-to-end analytics SaaS serving 3,000+ B2B users with real-time dashboards,
+            custom reporting, and white-label capabilities.</div>
+          <div class="wproject-stack"><span class="wstack">Next.js</span><span class="wstack">PostgreSQL</span><span
+              class="wstack">Kafka</span></div><a href="#" onclick="return false"
+            style="display:inline-block;margin-top:16px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);text-decoration:none;border:1px solid var(--border2);padding:5px 12px;border-radius:2px">Link
+            Updated Soon</a>
+          <div class="wproject-line"></div>
+        </div>
+        <div class="wproject" data-cat="mobile">
+          <div class="wproject-num">04</div>
+          <div class="wproject-tag">Mobile App</div>
+          <div class="wproject-name">Kinetic — Fitness & Coaching App</div>
+          <div class="wproject-desc">Cross-platform fitness app with AI-powered coaching and personalized plans. 50K+
+            downloads in first 3 months post-launch.</div>
+          <div class="wproject-stack"><span class="wstack">Flutter</span><span class="wstack">Firebase</span><span
+              class="wstack">ML Kit</span></div><a href="#" onclick="return false"
+            style="display:inline-block;margin-top:16px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);text-decoration:none;border:1px solid var(--border2);padding:5px 12px;border-radius:2px">Link
+            Updated Soon</a>
+          <div class="wproject-line"></div>
+        </div>
+        <div class="wproject" data-cat="web">
+          <div class="wproject-num">05</div>
+          <div class="wproject-tag">Web Application</div>
+          <div class="wproject-name">Synth — E-Commerce Platform</div>
+          <div class="wproject-desc">High-conversion D2C storefront with AI-driven recommendations and inventory
+            automation. 40% uplift in conversion rate.</div>
+          <div class="wproject-stack"><span class="wstack">React</span><span class="wstack">Shopify API</span><span
+              class="wstack">Node.js</span></div><a href="#" onclick="return false"
+            style="display:inline-block;margin-top:16px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);text-decoration:none;border:1px solid var(--border2);padding:5px 12px;border-radius:2px">Link
+            Updated Soon</a>
+          <div class="wproject-line"></div>
+        </div>
+        <div class="wproject" data-cat="ai">
+          <div class="wproject-num">06</div>
+          <div class="wproject-tag">AI Agent</div>
+          <div class="wproject-name">Aether — Legal Document AI</div>
+          <div class="wproject-desc">Contract review agent reducing document processing from 4 hours to 8 minutes with
+            99.1% accuracy for a law firm.</div>
+          <div class="wproject-stack"><span class="wstack">Claude</span><span class="wstack">LangChain</span><span
+              class="wstack">Pinecone</span></div><a href="#" onclick="return false"
+            style="display:inline-block;margin-top:16px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);text-decoration:none;border:1px solid var(--border2);padding:5px 12px;border-radius:2px">Link
+            Updated Soon</a>
+          <div class="wproject-line"></div>
+        </div>
+        <div class="wproject" data-cat="mobile">
+          <div class="wproject-num">07</div>
+          <div class="wproject-tag">Mobile App</div>
+          <div class="wproject-name">Pulse — Health Monitoring App</div>
+          <div class="wproject-desc">Real-time health monitoring integrating wearable data, AI anomaly detection, and
+            doctor notification for a healthcare provider.</div>
+          <div class="wproject-stack"><span class="wstack">React Native</span><span class="wstack">HealthKit</span><span
+              class="wstack">AWS</span></div><a href="#" onclick="return false"
+            style="display:inline-block;margin-top:16px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);text-decoration:none;border:1px solid var(--border2);padding:5px 12px;border-radius:2px">Link
+            Updated Soon</a>
+          <div class="wproject-line"></div>
         </div>
 
-        <div class="nav-links">
-            <a href="index.html#services" class="nav-link">Solutions</a>
-            <a href="about.html" class="nav-link">About</a>
-            <a href="contact.html" class="cta-button-small">Get in Touch</a>
+        <!-- COMING SOON PROJECTS -->
+        <div class="wproject" data-cat="ai" style="opacity:.6;border:1px dashed var(--border2)">
+          <div class="wproject-num">08</div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+            <div class="wproject-tag" style="margin-bottom:0">AI Agent</div><span
+              style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:rgba(167,139,250,.15);color:var(--purple);border:1px solid rgba(167,139,250,.25);padding:3px 10px;border-radius:100px">Coming
+              Soon</span>
+          </div>
+          <div class="wproject-name">Zenith — AI Sales Copilot</div>
+          <div class="wproject-desc">An autonomous sales agent that qualifies leads, drafts personalised outreach, and
+            books meetings — without a human in the loop. Currently in development for a B2B SaaS client.</div>
+          <div class="wproject-stack"><span class="wstack">LLM</span><span class="wstack">CRM Integration</span><span
+              class="wstack">Email Automation</span></div>
+          <div
+            style="margin-top:16px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--purple)">
+            🔒 In Development · Q3 2026</div>
         </div>
-    </nav>
-
-    <main>
-        <section class="work-hero">
-            <h1 class="headline">Selected <span class="gradient-text">Projects</span></h1>
-            <p class="subtext" style="max-width: 600px; margin: 0 auto 4rem;">
-                A showcase of intelligent systems and digital ecosystems we've engineered. Case studies coming soon.
-            </p>
-
-            <div class="work-grid">
-                <div class="placeholder-card">Project Alpha</div>
-                <div class="placeholder-card">System Beta</div>
-                <div class="placeholder-card">Neural Net X</div>
-            </div>
-
-            <div style="margin-top: 4rem;">
-                <a href="contact.html" class="primary-btn">Start Your Project</a>
-            </div>
-        </section>
-    </main>
-
-    <footer class="main-footer">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <h2>KRUTIX</h2>
-                <p>Building the digital nervous system for modern enterprises.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Solutions</h4>
-                <a href="index.html#services">Web Apps</a>
-                <a href="index.html#services">AI Agents</a>
-                <a href="index.html#services">Mobile Apps</a>
-            </div>
-            <div class="footer-col">
-                <h4>Company</h4>
-                <a href="about.html">About</a>
-                <a href="careers.html">Careers</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <div class="footer-col">
-                <h4>Social</h4>
-                <a href="https://instagram.com/krutix.ai" target="_blank">Instagram</a>
-                <a href="https://www.linkedin.com/company/krutix/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/orgs/Krutix-Agency/" target="_blank">GitHub</a>
-            </div>
+        <div class="wproject" data-cat="mobile" style="opacity:.6;border:1px dashed var(--border2)">
+          <div class="wproject-num">09</div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+            <div class="wproject-tag" style="margin-bottom:0">Mobile App</div><span
+              style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:rgba(167,139,250,.15);color:var(--purple);border:1px solid rgba(167,139,250,.25);padding:3px 10px;border-radius:100px">Coming
+              Soon</span>
+          </div>
+          <div class="wproject-name">Nova — Hyperlocal Delivery App</div>
+          <div class="wproject-desc">A 10-minute hyperlocal delivery app for quick-commerce — real-time tracking, smart
+            routing AI, and a merchant dashboard. Launching in 3 cities across India in Q4 2026.</div>
+          <div class="wproject-stack"><span class="wstack">React Native</span><span class="wstack">Maps API</span><span
+              class="wstack">Route AI</span></div>
+          <div
+            style="margin-top:16px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--purple)">
+            🔒 In Development · Q4 2026</div>
         </div>
-        <div class="footer-bottom">
-            &copy; 2026 Krutix Agency. All rights reserved.
+        <div class="wproject" data-cat="web" style="opacity:.6;border:1px dashed var(--border2)">
+          <div class="wproject-num">10</div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+            <div class="wproject-tag" style="margin-bottom:0">Web Application</div><span
+              style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:rgba(167,139,250,.15);color:var(--purple);border:1px solid rgba(167,139,250,.25);padding:3px 10px;border-radius:100px">Coming
+              Soon</span>
+          </div>
+          <div class="wproject-name">Cortex — No-Code AI Builder</div>
+          <div class="wproject-desc">A no-code platform letting non-technical founders build and deploy AI agents
+            through a visual drag-and-drop interface. Stealth-mode product currently in private beta.</div>
+          <div class="wproject-stack"><span class="wstack">React</span><span class="wstack">Node.js</span><span
+              class="wstack">LLM Orchestration</span></div>
+          <div
+            style="margin-top:16px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--purple)">
+            🔒 Private Beta · Q1 2027</div>
         </div>
+      </div>
+    </div>
+    <div class="cta-band">
+      <div>
+        <h2 class="sec-title" style="margin-bottom:10px">Your project<br><span style="color:var(--cyan)">could be
+            next.</span></h2>
+        <p style="font-size:14px;color:var(--ink2)">Let's design something remarkable together.</p>
+      </div><button class="btn-c" onclick="window.location.href='contact.html'">Start a Project</button>
+    </div>
+    <footer>
+      <div class="ft">
+        <div>
+          <div class="flogo">KRU<span>T</span>IX</div>
+          <div class="fdesc">Building the digital nervous system for modern enterprises.</div>
+        </div>
+        <div class="fcol">
+          <h4>Solutions</h4><a href="index.html#services">Web Apps</a><a
+            href="index.html#services">AI Agents</a><a href="index.html#services">Mobile Apps</a>
+        </div>
+        <div class="fcol">
+          <h4>Company</h4><a href="about.html">About</a><a href="careers.html">Careers</a><a
+            href="contact.html">Contact</a>
+        </div>
+        <div class="fcol">
+          <h4>Social</h4><a href="https://instagram.com/krutix.ai" target="_blank">Instagram</a><a
+            href="https://linkedin.com/company/krutix" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+      <div class="fb">
+        <div class="fcopy">© 2026 Krutix Agency. All rights reserved.</div>
+      </div>
     </footer>
-    <script>
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
+  </div>
+    </footer>
+  </div>
 
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    </script>
+  <script src="script.js"></script>
 </body>
 
 </html>
