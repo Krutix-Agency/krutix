@@ -2,273 +2,194 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krutix</title>
-    <link rel="icon" type="image/png" href="krutix.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Specific styles for about page */
-        .about-hero {
-            padding: 12vh 5% 1rem;
-            text-align: center;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            max-width: 1200px;
-            margin: 1rem auto 3rem;
-            align-items: center;
-        }
-
-        .about-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .about-text p {
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-            font-size: 1.1rem;
-        }
-
-        .about-visual {
-            height: 400px;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .visual-brand {
-            font-size: 3rem;
-            font-weight: 800;
-            letter-spacing: 0.5rem;
-            color: #fff;
-            position: relative;
-            z-index: 5;
-            text-shadow: 0 0 20px rgba(0, 243, 255, 0.5);
-            animation: brand-glow 4s ease-in-out infinite alternate, float 6s ease-in-out infinite;
-            background: linear-gradient(90deg, #fff, var(--accent-cyan));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        @keyframes brand-glow {
-            from {
-                text-shadow: 0 0 10px rgba(0, 243, 255, 0.5), 0 0 20px rgba(0, 243, 255, 0.2);
-                transform: scale(1);
-            }
-
-            to {
-                text-shadow: 0 0 30px rgba(0, 243, 255, 0.8), 0 0 50px rgba(0, 243, 255, 0.4);
-                transform: scale(1.05);
-            }
-        }
-
-        .creativity-section {
-            text-align: center;
-            padding: 6rem 5%;
-            background: rgba(0, 0, 0, 0.2);
-        }
-
-        .creativity-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        @media (max-width: 768px) {
-            .about-hero {
-                padding: 10vh 5% 1.5rem;
-                width: 100%;
-                text-align: center;
-            }
-
-            .about-hero .headline {
-                font-size: 2.2rem;
-                margin: 0 auto 1.5rem;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-                margin: 2rem auto;
-                text-align: center;
-                padding: 0 7%;
-            }
-
-            .about-text h2 {
-                font-size: 1.8rem;
-                margin-bottom: 1.5rem !important;
-                text-align: center;
-            }
-
-            .about-text p {
-                text-align: center !important;
-                font-size: 1rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .about-visual {
-                height: 250px;
-                order: -1;
-                width: 90%;
-                margin: 0 auto;
-            }
-
-            .visual-brand {
-                font-size: 1.8rem;
-                letter-spacing: 0.3rem;
-            }
-
-            .cta-section .cta-headline {
-                font-size: 2.2rem !important;
-            }
-
-            .cta-section .subtext {
-                font-size: 1rem !important;
-                margin-bottom: 2rem !important;
-                padding: 0 5%;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>KRUTIX</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="background-globes">
-        <div class="globe globe-1"></div>
-        <div class="globe globe-2"></div>
-        <div class="globe globe-3"></div>
+
+  <!-- KRUTIX INTRO -->
+  <div id="krutix-intro">
+    <div class="ki-grid"></div>
+    <div class="ki-glow"></div>
+    <div class="ki-scan"></div>
+    <div class="ki-corners"><span></span><span></span><span></span><span></span></div>
+    <div class="ki-word-wrap">
+      <div style="position:relative;display:inline-block">
+        <div class="ki-outline">KRUTIX</div>
+        <div class="ki-fill-wrap" id="ki-fill">
+          <div class="ki-filled">KRUTIX</div>
+        </div>
+      </div>
     </div>
+    <div class="ki-sub">Digital Systems Studio</div>
+    <div class="ki-status">Systems Online</div>
+    <div class="ki-bar-wrap">
+      <div class="ki-bar" id="ki-bar"></div>
+    </div>
+  </div>
 
-    <nav class="glass-nav">
-        <a href="index.html" class="logo">KRUTIX</a>
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="logo" href="index.html">KRU<span>T</span>IX</div>
+    <ul class="nav-links">
+      <li><a href="index.html" id="nav-home">Home</a></li>
+      <li><a href="index.html#services" id="nav-solutions">Solutions</a></li>
+      <li><a href="work.html" id="nav-work">Work</a></li>
+      <li><a href="about.html" id="nav-about">About</a></li>
+      <li><a href="careers.html" id="nav-careers">Careers</a></li>
+    </ul>
+    <button class="nav-cta" onclick="window.location.href='contact.html'">Get in Touch</button>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="index.html#services">Solutions</a>
+    <a href="work.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="careers.html">Careers</a>
+    <a href="contact.html">Get in Touch</a>
+  </div>
 
-        <div class="nav-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+  <!-- ABOUT -->
+  <div class="page" id="page-about">
+    <div class="about-hero">
+      <div class="grid-bg"></div>
+      <div class="glow-orb orb1"></div>
+      <p class="page-eyebrow">Who we are</p>
+      <h1 class="page-title">We're architects<br><span class="stroke">of digital systems.</span></h1>
+    </div>
+    <div class="about-body">
+      <div class="about-grid">
+        <div class="about-text">
+          <h3>Not an agency.<br>A systems studio.</h3>
+          <p>Krutix was founded with one belief — most businesses don't need a website, they need a digital nervous
+            system. One that thinks, responds, scales, and operates without constant human intervention.</p>
+          <p>We work with founders, enterprises, and growth-stage companies to design and deploy AI-powered digital
+            infrastructure that becomes a genuine competitive advantage.</p>
+          <p>Every engagement starts with deep discovery. We ask uncomfortable questions, challenge assumptions, and
+            then architect with precision.</p>
         </div>
-
-        <div class="nav-links">
-            <a href="index.html#services" class="nav-link">Solutions</a>
-            <a href="about.html" class="nav-link" style="color:#fff;">About</a>
-            <a href="contact.html" class="cta-button-small">Get in Touch</a>
+        <div class="about-vals">
+          <div class="aval">
+            <div class="aval-ico">⚡</div>
+            <div>
+              <div class="aval-title">Speed is a feature</div>
+              <div class="aval-text">We engineer performance at every layer — infrastructure, code, and UX.</div>
+            </div>
+          </div>
+          <div class="aval">
+            <div class="aval-ico">🎯</div>
+            <div>
+              <div class="aval-title">Precision over perfection</div>
+              <div class="aval-text">We ship systems that work exceptionally well for their purpose.</div>
+            </div>
+          </div>
+          <div class="aval">
+            <div class="aval-ico">🔁</div>
+            <div>
+              <div class="aval-title">Systems thinking</div>
+              <div class="aval-text">We see businesses as interconnected systems — every solution considers the whole.
+              </div>
+            </div>
+          </div>
+          <div class="aval">
+            <div class="aval-ico">🤝</div>
+            <div>
+              <div class="aval-title">Radical transparency</div>
+              <div class="aval-text">No hidden timelines. No surprise scopes. We build what we promise.</div>
+            </div>
+          </div>
         </div>
-    </nav>
-
-    <main>
-        <section class="about-hero reveal-text">
-            <h1 class="headline">Who We <span class="gradient-text">Are</span></h1>
-            <p class="subtext">Architects of the intelligent digital future.</p>
-        </section>
-
-        <section class="about-content">
-            <div class="about-grid">
-                <div class="about-text reveal-text">
-                    <h2 style="color: #fff;">Building the Future</h2>
-                    <p style="margin-bottom: 1.5rem;">
-                        At Krutix, we don't just write code; we engineer digital intelligence. We saw a world where
-                        businesses were suffocating under manual processes and outdated websites. We decided to change
-                        that.
-                    </p>
-                    <p>
-                        We are a team of visionaries, developers, and AI architects dedicated to creating
-                        self-sustaining digital ecosystems. Our mission is to liberate human creativity by automating
-                        the mundane.
-                    </p>
-                </div>
-                <div class="about-visual">
-                    <div class="visual-brand">KRUTIX</div>
-                    <!-- Abstract representation of system -->
-                    <div class="geo-shape shape-triangle" style="animation: rotate-float 10s linear infinite;"></div>
-                    <div class="cta-orb orb-1" style="width:200px; height:200px; filter:blur(60px);"></div>
-                </div>
+      </div>
+      <div>
+        <p class="eyebrow">The team</p>
+        <h2 class="sec-title" style="margin-bottom:clamp(28px,4vw,48px)">People behind<br><span class="muted">the
+            systems.</span></h2>
+        <div class="team-grid">
+          <div class="tcard">
+            <div class="tavatar">AK</div>
+            <div class="tname">Arjun Kapoor</div>
+            <div class="trole">Founder & CEO</div>
+            <div class="tbio">Systems architect with 8 years building scalable digital infrastructure for startups and
+              enterprises.</div>
+          </div>
+          <div class="tcard">
+            <div class="tavatar">PR</div>
+            <div class="tname">Priya Reddy</div>
+            <div class="trole">Head of Engineering</div>
+            <div class="tbio">Full-stack engineer specialized in high-performance web systems and distributed
+              architectures.</div>
+          </div>
+          <div class="tcard">
+            <div class="tavatar">SM</div>
+            <div class="tname">Sahil Mehta</div>
+            <div class="trole">AI Lead</div>
+            <div class="tbio">ML engineer focused on production AI agents, LLM fine-tuning, and autonomous workflow
+              automation.</div>
+          </div>
+          <div class="tcard">
+            <div class="tavatar">NK</div>
+            <div class="tname">Nisha Kumar</div>
+            <div class="trole">Design Lead</div>
+            <div class="tbio">Product designer crafting interfaces that feel inevitable — beautiful, fast, and deeply
+              functional.</div>
+          </div>
+          <div class="tcard">
+            <div class="tavatar">VT</div>
+            <div class="tname">Vikram Tiwari</div>
+            <div class="trole">Mobile Lead</div>
+            <div class="tbio">Cross-platform mobile engineer building native-quality apps in Flutter with a focus on
+              performance.</div>
+          </div>
+          <div class="tcard">
+            <div class="tavatar">RJ</div>
+            <div class="tname">Rohan Joshi</div>
+            <div class="trole">Growth Strategist</div>
+            <div class="tbio">Digital marketing strategist turning brand presence into measurable business outcomes.
             </div>
-        </section>
-
-        <section class="about-cta">
-            <div class="cta-content reveal-text">
-                <h2 class="cta-headline">
-                    The future is <span class="gradient-text">autonomous.</span><br>
-                    Are you ready to lead it?
-                </h2>
-                <p class="subtext">
-                    Don't just adapt to the future. Engineer it. <br>
-                    We build self-evolving digital ecosystems that scale with your vision and automate your growth.
-                </p>
-                <a href="contact.html" class="cta-btn-minimal">Ignite Your Growth</a>
-            </div>
-        </section>
-    </main>
-
-    <footer class="main-footer">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <h2>KRUTIX</h2>
-                <p>Building the digital nervous system for modern enterprises.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Solutions</h4>
-                <a href="index.html#services">Web Apps</a>
-                <a href="index.html#services">AI Agents</a>
-                <a href="index.html#services">Mobile Apps</a>
-            </div>
-            <div class="footer-col">
-                <h4>Company</h4>
-                <a href="about.html">About</a>
-                <a href="careers.html">Careers</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <div class="footer-col">
-                <h4>Social</h4>
-                <a href="https://instagram.com/krutix.ai" target="_blank">Instagram</a>
-                <a href="https://www.linkedin.com/company/krutix/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/orgs/Krutix-Agency/" target="_blank">GitHub</a>
-            </div>
+          </div>
         </div>
-        <div class="footer-bottom">
-            &copy; 2026 Krutix Agency. All rights reserved.
+      </div>
+    </div>
+    <div class="cta-band">
+      <div>
+        <h2 class="sec-title" style="margin-bottom:10px">Want to work<br><span style="color:var(--cyan)">with us?</span>
+        </h2>
+        <p style="font-size:14px;color:var(--ink2)">We're always looking for ambitious projects.</p>
+      </div><button class="btn-c" onclick="window.location.href='contact.html'">Get in Touch</button>
+    </div>
+    <footer>
+      <div class="ft">
+        <div>
+          <div class="flogo">KRU<span>T</span>IX</div>
+          <div class="fdesc">Building the digital nervous system for modern enterprises.</div>
         </div>
+        <div class="fcol">
+          <h4>Solutions</h4><a href="index.html#services">Web Apps</a><a
+            href="index.html#services">AI Agents</a><a href="index.html#services">Mobile Apps</a>
+        </div>
+        <div class="fcol">
+          <h4>Company</h4><a href="about.html">About</a><a href="careers.html">Careers</a><a
+            href="contact.html">Contact</a>
+        </div>
+        <div class="fcol">
+          <h4>Social</h4><a href="https://instagram.com/krutix.ai" target="_blank">Instagram</a><a
+            href="https://linkedin.com/company/krutix" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+      <div class="fb">
+        <div class="fcopy">© 2026 Krutix Agency. All rights reserved.</div>
+      </div>
     </footer>
-    <script>
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
+  </div>
+    </footer>
+  </div>
 
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Scroll Reveal Observer
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px"
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.reveal-text').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
+  <script src="script.js"></script>
 </body>
 
 </html>

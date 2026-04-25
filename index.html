@@ -2,356 +2,277 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krutix</title>
-    <link rel="icon" type="image/png" href="krutix.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>KRUTIX</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="background-globes">
-        <div class="globe globe-1"></div>
-        <div class="globe globe-2"></div>
-        <div class="globe globe-3"></div>
+
+  <!-- KRUTIX INTRO -->
+  <div id="krutix-intro">
+    <div class="ki-grid"></div>
+    <div class="ki-glow"></div>
+    <div class="ki-scan"></div>
+    <div class="ki-corners"><span></span><span></span><span></span><span></span></div>
+    <div class="ki-word-wrap">
+      <div style="position:relative;display:inline-block">
+        <div class="ki-outline">KRUTIX</div>
+        <div class="ki-fill-wrap" id="ki-fill">
+          <div class="ki-filled">KRUTIX</div>
+        </div>
+      </div>
+    </div>
+    <div class="ki-sub">Digital Systems Studio</div>
+    <div class="ki-status">Systems Online</div>
+    <div class="ki-bar-wrap">
+      <div class="ki-bar" id="ki-bar"></div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="logo" href="index.html">KRU<span>T</span>IX</div>
+    <ul class="nav-links">
+      <li><a href="index.html" id="nav-home">Home</a></li>
+      <li><a href="#services" id="nav-solutions">Solutions</a></li>
+      <li><a href="work.html" id="nav-work">Work</a></li>
+      <li><a href="about.html" id="nav-about">About</a></li>
+      <li><a href="careers.html" id="nav-careers">Careers</a></li>
+    </ul>
+    <button class="nav-cta" onclick="window.location.href='contact.html'">Get in Touch</button>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="#services">Solutions</a>
+    <a href="work.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="careers.html">Careers</a>
+    <a href="contact.html">Get in Touch</a>
+  </div>
+
+  <!-- HOME -->
+  <div class="page active" id="page-home">
+    <section class="hero">
+      <div class="grid-bg"></div>
+      <div class="glow-orb orb1"></div>
+      <div class="glow-orb orb2"></div>
+      <canvas id="particles-canvas" style="position:absolute;inset:0;pointer-events:none;z-index:0"></canvas>
+      <div class="hero-badge">Systems Online</div>
+      <h1 class="hero-title" style="position:relative;z-index:1">We build<br><span class="stroke"
+          id="typed-text"></span><span id="typed-cursor" style="color:var(--cyan)">|</span><br><span class="muted">not
+          just websites.</span></h1>
+      <p class="hero-sub" style="position:relative;z-index:1">AI agents, web apps & mobile systems engineered to run
+        your business autonomously — 24 hours, 7 days.</p>
+      <div class="hero-btns">
+        <button class="btn-c" onclick="window.location.href='#services'">Explore Solutions</button>
+        <button class="btn-o" onclick="window.location.href='work.html'">View Case Studies →</button>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat">
+          <div class="hstat-val"><span class="count" data-target="98">0</span><em>%</em></div>
+          <div class="hstat-lbl">Uptime</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-val">24<em>/7</em></div>
+          <div class="hstat-lbl">Active</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-val"><span class="count" data-target="50">0</span><em>+</em></div>
+          <div class="hstat-lbl">Projects</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-val">0<em>ms</em></div>
+          <div class="hstat-lbl">Downtime Goal</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="clients-bar">
+      <div class="clients-label">Trusted by</div>
+      <div class="clients-row">
+        <div class="client-logo featured">⚡ TechFuel</div>
+        <div class="client-logo">NEXUS</div>
+        <div class="client-logo">ORBITAL</div>
+        <div class="client-logo">SYNTH</div>
+        <div class="client-logo">KINETIC</div>
+        <div class="client-logo">AETHER</div>
+      </div>
     </div>
 
-    <nav class="glass-nav">
-        <a href="index.html" class="logo">KRUTIX</a>
+    <div class="marquee-bar">
+      <div class="mtrack">
+        <span class="mtag hi">AI Agents</span><span class="mtag">Web Apps</span><span class="mtag">Mobile
+          Systems</span><span class="mtag hi">24/7 Automation</span><span class="mtag">Digital Presence</span><span
+          class="mtag">Enterprise Scale</span><span class="mtag hi">Next-Gen Tech</span>
+        <span class="mtag hi">AI Agents</span><span class="mtag">Web Apps</span><span class="mtag">Mobile
+          Systems</span><span class="mtag hi">24/7 Automation</span><span class="mtag">Digital Presence</span><span
+          class="mtag">Enterprise Scale</span><span class="mtag hi">Next-Gen Tech</span>
+      </div>
+    </div>
 
-        <div class="nav-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+    <div class="section" id="services">
+      <p class="eyebrow">What we build</p>
+      <h2 class="sec-title">Precision systems<br><span class="muted">for modern business.</span></h2>
+      <div class="svc-grid">
+        <div class="svc">
+          <div class="svc-n">01</div><span class="svc-ico">💻</span>
+          <div class="svc-name">Web Applications</div>
+          <div class="svc-desc">High-performance scalable web apps built for reliability — from SaaS platforms to
+            enterprise portals.</div>
+          <div class="svc-tags"><span class="stag">React</span><span class="stag">Next.js</span><span
+              class="stag">Node</span></div>
+          <div class="svc-bar"></div>
         </div>
-
-        <div class="nav-links">
-            <a href="#services" class="nav-link">Solutions</a>
-            <a href="about.html" class="nav-link">About</a>
-            <a href="contact.html" class="cta-button-small">Get in Touch</a>
+        <div class="svc">
+          <div class="svc-n">02</div><span class="svc-ico">🤖</span>
+          <div class="svc-name">AI Agents</div>
+          <div class="svc-desc">Intelligent systems automating complex workflows — reducing overhead, scaling operations
+            autonomously.</div>
+          <div class="svc-tags"><span class="stag">LLM</span><span class="stag">RAG</span><span
+              class="stag">Automation</span></div>
+          <div class="svc-bar"></div>
         </div>
-    </nav>
-
-    <main>
-        <section class="hero-section">
-            <div class="metaverse-bg">
-                <div class="grid-plane"></div>
-            </div>
-            <div class="hero-content">
-                <div class="text-content">
-                    <div class="badge-container reveal-text">
-                        <span class="glass-badge" id="badge-text">Elite Mobile Apps</span>
-                    </div>
-                    <h1 class="headline reveal-text delay-100">
-                        We build <span class="gradient-text">Digital Systems,</span> <br>not just Websites.
-
-                        <!-- Intelligent <span class="gradient-text">Experiences</span> <br>Beyond Code. -->
-                    </h1>
-                    <p class="subtext reveal-text delay-200">
-                        AI agents, web apps, and mobile apps that run your business 24/7.
-                    </p>
-                    <div class="cta-group reveal-text delay-300">
-                        <!-- <a href="#services" class="primary-btn">Build Your App</a> -->
-                        <!-- <a href="#services" class="primary-btn">Start Automation</a> -->
-
-                        <a href="#services" class="primary-btn">Our Services</a>
-
-                        <a href="work.html" class="secondary-btn">View Case Studies</a>
-                    </div>
-                </div>
-
-                <div class="visual-content">
-                    <!-- Floating Cards Container -->
-                    <div class="floating-cards-container">
-                        <div class="glass-card card-main">
-                            <div class="card-header">
-                                <div class="dot red"></div>
-                                <div class="dot yellow"></div>
-                                <div class="dot green"></div>
-                            </div>
-                            <div class="card-body">
-                                <div class="code-line"><span class="keyword">const</span> <span
-                                        class="variable">system</span> = <span class="function">init</span>();</div>
-                                <div class="code-line"><span class="object">system</span>.<span
-                                        class="method">optimize</span>(<span class="string">'24/7'</span>);</div>
-                                <div class="progress-bar-container">
-                                    <div class="label">Efficiency</div>
-                                    <div class="progress-bar">
-                                        <div class="fill"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="glass-card card-stat floating-delay-1">
-                            <div class="stat-icon">⚡</div>
-                            <div class="stat-value">98%</div>
-                            <div class="stat-label">Uptime</div>
-                        </div>
-
-
-                        <div class="glass-card card-agent floating-delay-2">
-                            <div class="agent-avatar"></div>
-                            <div class="agent-info">
-                                <div class="agent-name">Agent K</div>
-                                <div class="agent-status">Active</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="trusted-section">
-            <p class="trusted-label reveal-text">Trusted by industry leaders</p>
-            <div class="logo-container reveal-text delay-200">
-                <div class="company-logo">NEXUS</div>
-                <div class="company-logo">ORBITAL</div>
-                <div class="company-logo">SYNTH</div>
-                <div class="company-logo">KINETIC</div>
-                <div class="company-logo">AETHER</div>
-            </div>
-        </section>
-
-        <section id="services" class="services-section">
-            <h2 class="section-title">Our <span class="gradient-text">Services</span></h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">💻</div>
-                    <h3>Web Apps</h3>
-                    <p>High-performance, scalable web applications built for the future.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🤖</div>
-                    <h3>AI Agents</h3>
-                    <p>Intelligent assistants that automate complex workflows autonomously.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📱</div>
-                    <h3>Mobile Apps</h3>
-                    <p>Native and cross-platform mobile experiences that engage users and drive growth.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🌐</div>
-                    <h3>Digital Presence</h3>
-                    <p>Complete management of your brand's digital footprint and growth.</p>
-                </div>
-            </div>
-        </section>
+        <div class="svc">
+          <div class="svc-n">03</div><span class="svc-ico">📱</span>
+          <div class="svc-name">Mobile Apps</div>
+          <div class="svc-desc">Native and cross-platform mobile experiences engineered to engage users and drive
+            measurable growth.</div>
+          <div class="svc-tags"><span class="stag">iOS</span><span class="stag">Android</span><span
+              class="stag">Flutter</span></div>
+          <div class="svc-bar"></div>
         </div>
-        </section>
-
-        <section id="ai-consultant" class="consultant-section">
-            <div class="consultant-container">
-                <div class="consultant-text">
-                    <h2 class="section-title-left reveal-text">Talk to our <br><span class="gradient-text">AI
-                            Consultant</span></h2>
-                    <p class="subtext reveal-text delay-100">
-                        Tell us about your business. We design the system for you.
-                    </p>
-                    <a href="#" class="primary-btn reveal-text delay-200">Start Chat</a>
-                </div>
-
-                <div class="chat-interface-container">
-                    <div class="chat-interface glass-card">
-                        <div class="chat-header">
-                            <div class="agent-avatar-small"></div>
-                            <div class="chat-title">Krutix AI</div>
-                            <div class="online-indicator"></div>
-                        </div>
-                        <div class="chat-body">
-                            <div class="chat-message bot-message">
-                                Hello! I'm Krutix AI. Ready to automate your business?
-                            </div>
-                            <div class="chat-message user-message">
-                                I need a system to handle customer support 24/7.
-                            </div>
-                            <div class="chat-message bot-message">
-                                <span class="typing-dots">
-                                    <span>.</span><span>.</span><span>.</span>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="chat-input-area">
-                            <div class="fake-input">Type your message...</div>
-                            <div class="send-btn">➤</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <div class="svc">
+          <div class="svc-n">04</div><span class="svc-ico">🌐</span>
+          <div class="svc-name">Digital Presence</div>
+          <div class="svc-desc">End-to-end brand digital footprint management — strategy, SEO, analytics and sustained
+            growth.</div>
+          <div class="svc-tags"><span class="stag">Brand</span><span class="stag">SEO</span><span
+              class="stag">Analytics</span></div>
+          <div class="svc-bar"></div>
         </div>
-        </section>
+      </div>
+    </div>
 
-        <section id="process" class="process-section">
-            <h2 class="section-title reveal-text">How We <span class="gradient-text">Work</span></h2>
-            <div class="process-container">
-                <div class="process-line"></div>
-
-                <div class="process-step delay-1">
-                    <div class="step-card glass-card">
-                        <div class="step-number">01</div>
-                        <h3>Discover</h3>
-                        <p>We analyze your workflows to identify inefficiencies.</p>
-                    </div>
-                </div>
-
-                <div class="process-step delay-2">
-                    <div class="step-card glass-card">
-                        <div class="step-number">02</div>
-                        <h3>Design</h3>
-                        <p>Architecting custom AI agents and digital systems for you.</p>
-                    </div>
-                </div>
-
-                <div class="process-step delay-3">
-                    <div class="step-card glass-card">
-                        <div class="step-number">03</div>
-                        <h3>Automate</h3>
-                        <p>Deploying intelligent bots that run 24/7 without downtime.</p>
-                    </div>
-                </div>
-
-                <div class="process-step delay-4">
-                    <div class="step-card glass-card">
-                        <div class="step-number">04</div>
-                        <h3>Scale</h3>
-                        <p>Expanding system capabilities as your business grows.</p>
-                    </div>
-                </div>
+    <div style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+      <div class="section">
+        <div class="proc-wrap">
+          <div class="proc-steps">
+            <div class="pstep"><span class="pnum">01</span>
+              <div>
+                <div class="pname">Discover</div>
+                <div class="ptext">We map your workflows, identify inefficiencies, and understand your real operational
+                  needs.</div>
+              </div>
             </div>
-        </section>
+            <div class="pstep"><span class="pnum">02</span>
+              <div>
+                <div class="pname">Design</div>
+                <div class="ptext">Architecting bespoke AI agents and digital systems tailored to your exact context.
+                </div>
+              </div>
+            </div>
+            <div class="pstep"><span class="pnum">03</span>
+              <div>
+                <div class="pname">Automate</div>
+                <div class="ptext">Deploying production-ready systems — intelligent, resilient, running around the
+                  clock.</div>
+              </div>
+            </div>
+            <div class="pstep"><span class="pnum">04</span>
+              <div>
+                <div class="pname">Scale</div>
+                <div class="ptext">As your business expands, your systems evolve with it. Headroom engineered from day
+                  one.</div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="eyebrow">How we work</p>
+            <h2 class="sec-title" style="margin-bottom:18px">From brief<br><span class="muted">to breakthrough.</span>
+            </h2>
+            <p style="font-size:14px;color:var(--ink2);line-height:1.85;margin-bottom:28px">We don't just build — we
+              architect. Every engagement ends with a system that runs without you.</p>
+            <div class="terminal">
+              <div class="tbar">
+                <div class="tdot" style="background:#ff5f57"></div>
+                <div class="tdot" style="background:#febc2e"></div>
+                <div class="tdot" style="background:#28c840"></div>
+              </div>
+              <div class="tbody"><span class="td">$</span> <span class="tc">krutix</span> init --client=acme<br><span
+                  class="td">→</span> Analyzing workflows...<br><span class="td">→</span> Designing
+                architecture...<br><span class="tp">✓</span> Agent deployed: <span class="tc">active</span><br><span
+                  class="tp">✓</span> Uptime: <span class="tc">98.9%</span> | Latency: <span class="tc">4ms</span></div>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <p class="eyebrow">Why Krutix</p>
+      <h2 class="sec-title" style="margin-bottom:clamp(28px,5vw,60px)">Built different,<br><span class="muted">by
+          design.</span></h2>
+      <div class="why-grid">
+        <div class="wcard">
+          <div class="wbig">01</div>
+          <div class="wtitle">Future Proof</div>
+          <div class="wtext">Next-gen architecture with scalability built in — no costly retrofitting as you grow.</div>
         </div>
-        </section>
-
-        <section class="why-us-section">
-            <h2 class="section-title reveal-text">Why <span class="gradient-text">Krutix</span>?</h2>
-            <div class="why-grid">
-                <div class="why-card">
-                    <div class="why-icon">🚀</div>
-                    <h3>Future Proof</h3>
-                    <p>Our systems are built with next-gen architecture that scales with your growth.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon">🔒</div>
-                    <h3>Enterprise Secure</h3>
-                    <p>Bank-grade encryption and security protocols protecting your critical data.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon">⚡</div>
-                    <h3>Lightning Fast</h3>
-                    <p>Optimized for maximum performance and near-zero latency interactions.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="cta" class="cta-section">
-            <div class="cta-background">
-                <div class="cta-orb orb-1"></div>
-                <div class="cta-orb orb-2"></div>
-                <div class="geo-shape shape-square"></div>
-                <div class="geo-shape shape-triangle"></div>
-            </div>
-
-            <div class="cta-content">
-                <!-- <h2 class="cta-headline">Let AI run your <br>digital operations.</h2> -->
-                <!-- <h2 class="cta-headline">Let Krutix's Team run your <br>digital operations.</h2> -->
-                <h2 class="cta-headline">Krutix’s team. Your digital <br><span class="gradient-text">Growth
-                        Partner.</span></h2>
-
-
-
-
-                <a href="contact.html" class="cta-btn-minimal">Start Now</a>
-            </div>
-        </section>
-    </main>
-
-    <footer class="main-footer">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <h2>KRUTIX</h2>
-                <p>Building the digital nervous system for modern enterprises.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Solutions</h4>
-                <a href="#services">Web Apps</a>
-                <a href="#services">AI Agents</a>
-                <a href="#services">Mobile Apps</a>
-            </div>
-            <div class="footer-col">
-                <h4>Company</h4>
-                <a href="about.html">About</a>
-                <a href="careers.html">Careers</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <div class="footer-col">
-                <h4>Social</h4>
-                <a href="https://instagram.com/krutix.ai" target="_blank">Instagram</a>
-                <a href="https://www.linkedin.com/company/krutix/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/orgs/Krutix-Agency/" target="_blank">GitHub</a>
-            </div>
+        <div class="wcard">
+          <div class="wbig">02</div>
+          <div class="wtitle">Enterprise Secure</div>
+          <div class="wtext">Bank-grade encryption and rigorous security protocols protecting your critical data.</div>
         </div>
-        <div class="footer-bottom">
-            &copy; 2026 Krutix Agency. All rights reserved.
+        <div class="wcard">
+          <div class="wbig">03</div>
+          <div class="wtitle">Zero Latency</div>
+          <div class="wtext">Optimized from infrastructure to interface — your users feel speed, not wait times.</div>
         </div>
+      </div>
+    </div>
+
+    <div class="cta-band">
+      <div>
+        <h2 class="sec-title" style="margin-bottom:10px">Let's build your<br><span style="color:var(--cyan)">digital
+            system.</span></h2>
+        <p style="font-size:14px;color:var(--ink2)">Tell us about your business. We'll design the architecture.</p>
+      </div>
+      <button class="btn-c" onclick="window.location.href='contact.html'">Start a Project</button>
+    </div>
+
+    <footer>
+      <div class="ft">
+        <div>
+          <div class="flogo">KRU<span>T</span>IX</div>
+          <div class="fdesc">Building the digital nervous system for modern enterprises.</div>
+        </div>
+        <div class="fcol">
+          <h4>Solutions</h4><a href="#services">Web Apps</a><a
+            href="#services">AI Agents</a><a href="#services">Mobile
+            Apps</a><a href="#services">Digital Presence</a>
+        </div>
+        <div class="fcol">
+          <h4>Company</h4><a href="about.html">About</a><a href="careers.html">Careers</a><a
+            href="contact.html">Contact</a>
+        </div>
+        <div class="fcol">
+          <h4>Social</h4><a href="https://instagram.com/krutix.ai" target="_blank">Instagram</a><a
+            href="https://linkedin.com/company/krutix" target="_blank">LinkedIn</a><a
+            href="https://github.com/orgs/Krutix-Agency" target="_blank">GitHub</a>
+        </div>
+      </div>
+      <div class="fb">
+        <div class="fcopy">© 2026 Krutix Agency. All rights reserved.</div>
+        <div class="fsoc"><a>Privacy</a><a>Terms</a></div>
+      </div>
     </footer>
-    <script>
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
+  </div>
 
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Scroll Reveal Observer
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px"
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    observer.unobserve(entry.target); // Only animate once
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.reveal-text').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Hero Badge Text Rotation
-        const phrases = [
-            "Elite Mobile Apps",
-            "Next Gen Automation",
-            "Intelligent AI Systems",
-            "Custom Web Apps",
-            "Digital Nervous Systems"
-        ];
-        let currentPhraseIndex = 0;
-        const badgeElement = document.getElementById('badge-text');
-
-        function rotateBadgeText() {
-            badgeElement.classList.add('badge-fade');
-
-            setTimeout(() => {
-                currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
-                badgeElement.textContent = phrases[currentPhraseIndex];
-                badgeElement.classList.remove('badge-fade');
-            }, 500); // Matches the 0.5s transition in CSS
-        }
-
-        if (badgeElement) {
-            setInterval(rotateBadgeText, 3000); // Change text every 3 seconds
-        }
-    </script>
+  <script src="script.js"></script>
 </body>
 
 </html>

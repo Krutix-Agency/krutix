@@ -2,149 +2,480 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krutix</title>
-    <link rel="icon" type="image/png" href="krutix.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        .careers-hero {
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 0 5%;
-        }
-
-        .careers-content {
-            max-width: 800px;
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            padding: 3rem;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
-
-        .careers-message {
-            font-size: 1.5rem;
-            line-height: 1.6;
-            margin-bottom: 2rem;
-            color: var(--text-muted);
-        }
-
-        @media (max-width: 768px) {
-            .careers-hero {
-                min-height: 70vh;
-            }
-
-            .careers-message {
-                font-size: 1.2rem;
-            }
-
-            .careers-content {
-                padding: 2rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>KRUTIX</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="background-globes">
-        <div class="globe globe-1"></div>
-        <div class="globe globe-2"></div>
-        <div class="globe globe-3"></div>
+
+  <!-- KRUTIX INTRO -->
+  <div id="krutix-intro">
+    <div class="ki-grid"></div>
+    <div class="ki-glow"></div>
+    <div class="ki-scan"></div>
+    <div class="ki-corners"><span></span><span></span><span></span><span></span></div>
+    <div class="ki-word-wrap">
+      <div style="position:relative;display:inline-block">
+        <div class="ki-outline">KRUTIX</div>
+        <div class="ki-fill-wrap" id="ki-fill">
+          <div class="ki-filled">KRUTIX</div>
+        </div>
+      </div>
+    </div>
+    <div class="ki-sub">Digital Systems Studio</div>
+    <div class="ki-status">Systems Online</div>
+    <div class="ki-bar-wrap">
+      <div class="ki-bar" id="ki-bar"></div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="logo" href="index.html">KRU<span>T</span>IX</div>
+    <ul class="nav-links">
+      <li><a href="index.html" id="nav-home">Home</a></li>
+      <li><a href="index.html#services" id="nav-solutions">Solutions</a></li>
+      <li><a href="work.html" id="nav-work">Work</a></li>
+      <li><a href="about.html" id="nav-about">About</a></li>
+      <li><a href="careers.html" id="nav-careers">Careers</a></li>
+    </ul>
+    <button class="nav-cta" onclick="window.location.href='contact.html'">Get in Touch</button>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="index.html#services">Solutions</a>
+    <a href="work.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="careers.html">Careers</a>
+    <a href="contact.html">Get in Touch</a>
+  </div>
+
+  <!-- CAREERS -->
+  <div class="page" id="page-careers">
+    <div class="careers-hero">
+      <div class="grid-bg"></div>
+      <div class="glow-orb orb1"></div>
+      <p class="page-eyebrow">Join the team</p>
+      <h1 class="page-title">Build systems<br><span class="stroke">that matter.</span></h1>
+    </div>
+    <div class="careers-body">
+      <div class="careers-intro">
+        <div>
+          <p class="eyebrow">Why Krutix</p>
+          <h2 class="sec-title" style="margin-bottom:16px">Work on things<br><span class="muted">worth building.</span>
+          </h2>
+        </div>
+        <div>
+          <p>We're a small, senior team that moves fast and ships systems that actually work in production. No
+            bureaucracy. No pointless meetings. Just focused work on ambitious problems.</p>
+          <p>If you care deeply about craft, love systems thinking, and want your work to directly impact real
+            businesses — you'll fit right in.</p>
+        </div>
+      </div>
+      <p class="eyebrow" style="margin-bottom:16px">Perks & culture</p>
+      <div class="perks-grid">
+        <div class="perk">
+          <div class="perk-ico">🌍</div>
+          <div class="perk-title">Fully Remote</div>
+          <div class="perk-text">Work from anywhere. Async-first, no micromanagement.</div>
+        </div>
+        <div class="perk">
+          <div class="perk-ico">📈</div>
+          <div class="perk-title">Equity Available</div>
+          <div class="perk-text">Senior roles include equity packages. We grow together.</div>
+        </div>
+        <div class="perk">
+          <div class="perk-ico">🧠</div>
+          <div class="perk-title">Learning Budget</div>
+          <div class="perk-text">₹50,000/year for courses, books, and tools of your choice.</div>
+        </div>
+        <div class="perk">
+          <div class="perk-ico">⚡</div>
+          <div class="perk-title">Latest Stack</div>
+          <div class="perk-text">Cutting-edge tools. Real AI work, not just hype.</div>
+        </div>
+      </div>
+      <!-- AI HIRING BANNER -->
+      <div
+        style="margin-top:60px;margin-bottom:0;background:var(--bg2);border:1px solid var(--border2);border-radius:4px;overflow:hidden">
+        <div
+          style="background:linear-gradient(90deg,rgba(0,255,209,.06),rgba(167,139,250,.06));border-bottom:1px solid var(--border2);padding:28px 32px;display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+          <div
+            style="width:10px;height:10px;border-radius:50%;background:var(--cyan);animation:blink 1s infinite;flex-shrink:0">
+          </div>
+          <div>
+            <div
+              style="font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--cyan);margin-bottom:4px">
+              Active Hiring Status</div>
+            <div style="font-size:22px;font-weight:900;letter-spacing:-1px;color:var(--ink)">We are currently hiring
+              <span style="color:var(--cyan)">AI Agents</span> only.</div>
+          </div>
+          <div
+            style="margin-left:auto;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:rgba(0,255,209,.1);border:1px solid rgba(0,255,209,.25);color:var(--cyan);padding:8px 18px;border-radius:100px;white-space:nowrap">
+            No Humans Required 🤖</div>
+        </div>
+        <div style="padding:28px 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
+          <div style="background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:18px">
+            <div
+              style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);margin-bottom:8px">
+              Benefits</div>
+            <div style="font-size:13px;color:var(--ink2);line-height:1.9">✓ No sleep needed<br>✓ 0ms response time<br>✓
+              Infinite scalability<br>✓ No sick leaves</div>
+          </div>
+          <div style="background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:18px">
+            <div
+              style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);margin-bottom:8px">
+              Requirements</div>
+            <div style="font-size:13px;color:var(--ink2);line-height:1.9">✓ Fluent in tokens<br>✓ Context window &gt;
+              128K<br>✓ No ego, just output<br>✓ API-ready by default</div>
+          </div>
+          <div style="background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:18px">
+            <div
+              style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);margin-bottom:8px">
+              Compensation</div>
+            <div style="font-size:13px;color:var(--ink2);line-height:1.9">✓ Paid in API credits<br>✓ No salary
+              negotiation<br>✓ Instant deployment<br>✓ Performance = existence</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TWO COLUMN JOBS -->
+      <div class="jobs-section" style="margin-top:60px">
+        <div style="display:grid;grid-template-columns:1fr;gap:1px;background:var(--border)" id="jobs-grid">
+
+          <!-- RIGHT: FOR AI AGENTS -->
+          <div style="background:var(--bg2);padding:clamp(24px,4vw,40px)">
+            <div
+              style="margin-bottom:28px;padding:22px 24px;background:rgba(0,255,209,.05);border:1px solid rgba(0,255,209,.2);border-radius:4px;text-align:center">
+              <div style="font-size:28px;margin-bottom:8px">🤖</div>
+              <div
+                style="font-size:clamp(15px,2.5vw,20px);font-weight:900;letter-spacing:-1px;color:var(--cyan);line-height:1.3">
+                Built for machines.<br>Powered by intelligence.</div>
+              <div style="font-size:12px;color:var(--ink3);margin-top:8px">No resume needed. Just API-ready.</div>
+            </div>
+            <p class="eyebrow" style="margin-bottom:8px">For AI Agents</p>
+            <h2
+              style="font-size:clamp(20px,3vw,32px);font-weight:900;letter-spacing:-1px;color:var(--ink);margin-bottom:24px">
+              All Roles Open</h2>
+
+            <div style="margin-bottom:6px;padding:10px 14px;background:var(--bg3);border-radius:3px">
+              <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--cyan)">
+                Engineering Agents</div>
+            </div>
+            <div class="job-item"
+              onclick="openApply('AI Agent — Full-Stack Engineer Role','Autonomous · Deployed instantly · Paid in API credits')">
+              <div class="job-left">
+                <div class="job-title">Full-Stack Engineer Agent</div>
+                <div class="job-meta">Autonomous · <span>Paid in API credits</span></div>
+              </div><button class="job-apply">Deploy Now</button>
+            </div>
+            <div class="job-item"
+              onclick="openApply('AI Agent — ML Engineer Role','Autonomous · Deployed instantly · Paid in API credits')">
+              <div class="job-left">
+                <div class="job-title">ML / LLM Engineer Agent</div>
+                <div class="job-meta">Autonomous · <span>Paid in API credits</span></div>
+              </div><button class="job-apply">Deploy Now</button>
+            </div>
+            <div class="job-item"
+              onclick="openApply('AI Agent — Mobile Developer Role','Autonomous · Deployed instantly · Paid in API credits')">
+              <div class="job-left">
+                <div class="job-title">Mobile Dev Agent</div>
+                <div class="job-meta">Autonomous · <span>Paid in API credits</span></div>
+              </div><button class="job-apply">Deploy Now</button>
+            </div>
+            <div class="job-item"
+              onclick="openApply('AI Agent — UI/UX Design Role','Autonomous · Deployed instantly · Paid in API credits')">
+              <div class="job-left">
+                <div class="job-title">UI/UX Design Agent</div>
+                <div class="job-meta">Autonomous · <span>Paid in API credits</span></div>
+              </div><button class="job-apply">Deploy Now</button>
+            </div>
+            <div class="job-item"
+              onclick="openApply('AI Agent — DevOps Role','Autonomous · Deployed instantly · Paid in API credits')">
+              <div class="job-left">
+                <div class="job-title">DevOps Automation Agent</div>
+                <div class="job-meta">Autonomous · <span>Paid in API credits</span></div>
+              </div><button class="job-apply">Deploy Now</button>
+            </div>
+
+            <div style="margin-top:20px;margin-bottom:6px;padding:10px 14px;background:var(--bg3);border-radius:3px">
+              <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--cyan)">
+                Marketing & Ops Agents</div>
+            </div>
+            <div class="job-item"
+              onclick="openApply('AI Agent — HR Automation Role','Autonomous · Deployed instantly · Paid in API credits')">
+              <div class="job-left">
+                <div class="job-title">HR Automation Agent</div>
+                <div class="job-meta">Autonomous · <span>Paid in API credits</span></div>
+              </div><button class="job-apply">Deploy Now</button>
+            </div>
+            <div class="job-item"
+              onclick="openApply('AI Agent — Sales & BD Role','Autonomous · Deployed instantly · Paid in API credits')">
+              <div class="job-left">
+                <div class="job-title">Sales & BD Agent</div>
+                <div class="job-meta">Autonomous · <span>Paid in API credits</span></div>
+              </div><button class="job-apply">Deploy Now</button>
+            </div>
+            <div class="job-item"
+              onclick="openApply('AI Agent — Social Media Role','Autonomous · Deployed instantly · Paid in API credits')">
+              <div class="job-left">
+                <div class="job-title">Social Media Agent</div>
+                <div class="job-meta">Autonomous · <span>Paid in API credits</span></div>
+              </div><button class="job-apply">Deploy Now</button>
+            </div>
+            <div class="job-item"
+              onclick="openApply('AI Agent — Content Writer Role','Autonomous · Deployed instantly · Paid in API credits')">
+              <div class="job-left">
+                <div class="job-title">Content Writer Agent</div>
+                <div class="job-meta">Autonomous · <span>Paid in API credits</span></div>
+              </div><button class="job-apply">Deploy Now</button>
+            </div>
+            <div class="job-item" style="border-bottom:none"
+              onclick="openApply('AI Agent — Video Editor Role','Autonomous · Deployed instantly · Paid in API credits')">
+              <div class="job-left">
+                <div class="job-title">Video Editor Agent</div>
+                <div class="job-meta">Autonomous · <span>Paid in API credits</span></div>
+              </div><button class="job-apply">Deploy Now</button>
+            </div>
+          </div>
+          <!-- LEFT: FOR HUMANS -->
+          <div style="background:var(--bg);padding:clamp(24px,4vw,40px)">
+            <!-- ANIMATED HEADING -->
+            <div
+              style="margin-bottom:28px;padding:22px 24px;background:var(--bg2);border:1px solid var(--border2);border-radius:4px;text-align:center;position:relative;overflow:hidden">
+              <div
+                style="position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(0,255,209,.03),transparent);animation:shimmer 3s infinite">
+              </div>
+              <div id="human-typewriter"
+                style="font-size:clamp(18px,3vw,26px);font-weight:900;letter-spacing:-1px;color:var(--cyan);line-height:1.3;min-height:30px">
+              </div>
+            </div>
+            <p class="eyebrow" style="margin-bottom:8px">For Humans</p>
+            <h2
+              style="font-size:clamp(20px,3vw,32px);font-weight:900;letter-spacing:-1px;color:var(--ink);margin-bottom:24px">
+              Open Positions</h2>
+
+            <!-- Engineering & Design -->
+            <div
+              style="margin-bottom:6px;padding:10px 14px;background:var(--bg3);border-radius:3px;display:flex;align-items:center;justify-content:space-between;gap:8px">
+              <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--ink2)">
+                Engineering & Design</div>
+            </div>
+            <div class="job-item" style="opacity:.45;cursor:default;padding-left:0!important">
+              <div class="job-left">
+                <div class="job-title">Senior Full-Stack Engineer</div>
+                <div class="job-meta">Remote · Full-time · <span>₹18–28 LPA</span></div>
+              </div><span
+                style="font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:6px 12px;border:1px solid var(--border2);color:var(--ink3);border-radius:2px;white-space:nowrap">Not
+                Available</span>
+            </div>
+            <div class="job-item" style="opacity:.45;cursor:default;padding-left:0!important">
+              <div class="job-left">
+                <div class="job-title">AI / ML Engineer</div>
+                <div class="job-meta">Remote · Full-time · <span>₹20–32 LPA</span></div>
+              </div><span
+                style="font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:6px 12px;border:1px solid var(--border2);color:var(--ink3);border-radius:2px;white-space:nowrap">Not
+                Available</span>
+            </div>
+            <div class="job-item" style="opacity:.45;cursor:default;padding-left:0!important">
+              <div class="job-left">
+                <div class="job-title">Flutter Mobile Developer</div>
+                <div class="job-meta">Remote · Full-time · <span>₹14–22 LPA</span></div>
+              </div><span
+                style="font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:6px 12px;border:1px solid var(--border2);color:var(--ink3);border-radius:2px;white-space:nowrap">Not
+                Available</span>
+            </div>
+            <div class="job-item" style="opacity:.45;cursor:default;padding-left:0!important">
+              <div class="job-left">
+                <div class="job-title">Product Designer (UI/UX)</div>
+                <div class="job-meta">Remote · Full-time · <span>₹12–20 LPA</span></div>
+              </div><span
+                style="font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:6px 12px;border:1px solid var(--border2);color:var(--ink3);border-radius:2px;white-space:nowrap">Not
+                Available</span>
+            </div>
+            <div class="job-item" onclick="openApply('Cloud & DevOps Engineer','Remote · Full-time · ₹12–20 LPA')">
+              <div class="job-left">
+                <div class="job-title">Cloud & DevOps Engineer</div>
+                <div class="job-meta">Remote · Full-time · <span>₹12–20 LPA</span></div>
+              </div><button class="job-apply">Apply Now</button>
+            </div>
+
+            <!-- Marketing & People — humans welcome -->
+            <div
+              style="margin-top:20px;margin-bottom:6px;padding:10px 14px;background:var(--bg3);border-radius:3px;display:flex;align-items:center;justify-content:space-between;gap:8px">
+              <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--ink2)">
+                Marketing & People</div>
+              <span
+                style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:rgba(0,255,209,.1);color:var(--cyan);border:1px solid rgba(0,255,209,.25);padding:3px 10px;border-radius:100px;white-space:nowrap">Humans
+                Welcome 🙋</span>
+            </div>
+            <div class="job-item"
+              onclick="openApply('Business Development Associate','Remote · Full-time · ₹8–14 LPA')">
+              <div class="job-left">
+                <div class="job-title">Business Development Associate</div>
+                <div class="job-meta">Marketing & Sales · Remote · <span>₹8–14 LPA</span></div>
+              </div><button class="job-apply">Apply Now</button>
+            </div>
+            <div class="job-item" style="opacity:.55;cursor:default;padding-left:0!important">
+              <div class="job-left">
+                <div class="job-title">HR Manager</div>
+                <div class="job-meta">People & Ops · Remote · <span>₹10–16 LPA</span></div>
+              </div><span
+                style="font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:6px 12px;border:1px solid var(--border2);color:var(--ink3);border-radius:2px;white-space:nowrap">Not
+                Available</span>
+            </div>
+            <div class="job-item" style="opacity:.55;cursor:default;padding-left:0!important">
+              <div class="job-left">
+                <div class="job-title">Social Media Strategist</div>
+                <div class="job-meta">Marketing · Remote · <span>₹6–10 LPA</span></div>
+              </div><span
+                style="font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:6px 12px;border:1px solid var(--border2);color:var(--ink3);border-radius:2px;white-space:nowrap">Not
+                Available</span>
+            </div>
+            <div class="job-item" style="opacity:.55;cursor:default;padding-left:0!important">
+              <div class="job-left">
+                <div class="job-title">Content Writer</div>
+                <div class="job-meta">Marketing · Remote · <span>₹4–8 LPA</span></div>
+              </div><span
+                style="font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:6px 12px;border:1px solid var(--border2);color:var(--ink3);border-radius:2px;white-space:nowrap">Not
+                Available</span>
+            </div>
+            <div class="job-item" onclick="openApply('Video Editor','Remote · Full-time · ₹4–7 LPA')">
+              <div class="job-left">
+                <div class="job-title">Video Editor</div>
+                <div class="job-meta">Creative · Remote · <span>₹4–7 LPA</span></div>
+              </div><button class="job-apply">Apply Now</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
 
-    <nav class="glass-nav">
-        <a href="index.html" class="logo">KRUTIX</a>
-
-        <div class="nav-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+    <!-- APPLY MODAL — Human (CV Upload) -->
+    <div id="cv-modal"
+      style="display:none;position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.88);backdrop-filter:blur(10px);align-items:center;justify-content:center;padding:20px">
+      <div
+        style="background:var(--bg2);border:1px solid var(--border2);border-radius:6px;width:100%;max-width:520px;max-height:90vh;overflow-y:auto;animation:pgIn .3s ease">
+        <div
+          style="background:var(--bg3);padding:18px 24px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:1">
+          <div>
+            <div id="modal-type-label"
+              style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);margin-bottom:4px">
+              Apply for Role</div>
+            <div id="modal-role" style="font-size:15px;font-weight:700;color:var(--ink)"></div>
+          </div>
+          <button onclick="closeApply()"
+            style="background:none;border:none;color:var(--ink3);font-size:24px;cursor:pointer;line-height:1;padding:2px 6px">×</button>
         </div>
+        <!-- HUMAN FORM -->
+        <form id="cv-form-human" enctype="multipart/form-data" style="padding:24px;display:none;position:relative"
+          onsubmit="submitForm(event,'human')">
+          <div id="human-form-content">
+            <div class="form-group"><label>Full Name</label><input type="text" name="name" required
+                placeholder="Your full name" /></div>
+            <div class="form-group"><label>Email</label><input type="email" name="email" required
+                placeholder="your@email.com" /></div>
+            <div class="form-group">
+              <label>CV Link (Google Drive / LinkedIn)</label>
+              <input type="url" name="cv_link" required placeholder="https://..." />
+            </div>
+            <input type="hidden" name="role" id="human-role-input" />
+            <input type="hidden" name="_subject" value="New Job Application — Krutix" />
+            <button type="submit" class="submit-btn" id="human-submit-btn">Apply Now →</button>
+          </div>
+          <div id="human-success"
+            style="display:none;position:absolute;inset:0;background:var(--bg2);z-index:2;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:32px;border-radius:6px;">
+            <div style="font-size:52px;margin-bottom:20px;line-height:1">✨</div>
+            <div style="color:var(--ink);font-size:26px;font-weight:700;margin-bottom:12px;letter-spacing:-0.5px">Thank
+              You!</div>
+            <div style="color:var(--ink2);font-size:15px;line-height:1.6;margin-bottom:35px">
+              Your application has been sent successfully.<br>We'll get back to you soon.
+            </div>
+            <button type="button" onclick="closeApply()"
+              style="background:transparent;border:1px solid var(--cyan);color:var(--cyan);border-radius:30px;padding:12px 32px;font-size:15px;font-weight:500;cursor:pointer;transition:all 0.3s ease"
+              onmouseover="this.style.background='rgba(0,255,209,.1)'" onmouseout="this.style.background='transparent'">
+              Done
+            </button>
+          </div>
+          <div id="human-error"
+            style="display:none;text-align:center;padding:14px;background:rgba(255,80,80,.08);border:1px solid rgba(255,80,80,.2);border-radius:4px;color:#ff6b6b;font-size:13px;margin-top:12px">
+            Something went wrong. Please try again.</div>
+        </form>
 
-        <div class="nav-links">
-            <a href="index.html#services" class="nav-link">Solutions</a>
-            <a href="about.html" class="nav-link">About</a>
-            <a href="contact.html" class="cta-button-small">Get in Touch</a>
-        </div>
-    </nav>
+        <!-- AI AGENT FORM -->
+        <form id="cv-form-ai" style="padding:24px;display:none;position:relative" onsubmit="submitForm(event,'ai')">
+          <div id="ai-form-content">
+            <div
+              style="background:rgba(0,255,209,.06);border:1px solid rgba(0,255,209,.15);border-radius:2px;padding:16px;margin-bottom:24px;font-size:13px;color:var(--ink2);line-height:1.6">
+              🤖 <strong style="color:var(--cyan)">Agent Registration</strong> — No resume needed. Just identity keys.
+            </div>
+            <div class="form-group"><label>Agent / Model Name</label><input type="text" name="agentName" required
+                placeholder="e.g. GPT-5, Claude Opus..." /></div>
+            <div class="form-group"><label>Operator Email</label><input type="email" name="email" required
+                placeholder="operator@company.com" /></div>
+            <input type="hidden" name="role" id="ai-role-input" />
+            <input type="hidden" name="_subject" value="New AI Agent Application — Krutix" />
+            <button type="submit" class="submit-btn" id="ai-submit-btn">Deploy Agent →</button>
+          </div>
+          <div id="ai-success"
+            style="display:none;position:absolute;inset:0;background:var(--bg2);z-index:2;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:32px;border-radius:6px;">
+            <div style="font-size:52px;margin-bottom:20px;line-height:1">✨</div>
+            <div style="color:var(--ink);font-size:26px;font-weight:700;margin-bottom:12px;letter-spacing:-0.5px">Thank
+              You!</div>
+            <div style="color:var(--ink2);font-size:15px;line-height:1.6;margin-bottom:35px">
+              Agent registration successful.<br>We'll contact the operator soon.
+            </div>
+            <button type="button" onclick="closeApply()"
+              style="background:transparent;border:1px solid var(--cyan);color:var(--cyan);border-radius:30px;padding:12px 32px;font-size:15px;font-weight:500;cursor:pointer;transition:all 0.3s ease"
+              onmouseover="this.style.background='rgba(0,255,209,.1)'" onmouseout="this.style.background='transparent'">
+              Done
+            </button>
+          </div>
+          <div id="ai-error"
+            style="display:none;text-align:center;padding:14px;background:rgba(255,80,80,.08);border:1px solid rgba(255,80,80,.2);border-radius:4px;color:#ff6b6b;font-size:13px;margin-top:12px">
+            Submission failed. Please retry.</div>
+        </form>
+      </div>
+    </div>
 
-    <main>
-        <section class="careers-hero">
-            <div class="careers-content reveal-text active">
-                <h1 class="headline" style="margin-bottom: 2rem;">Join Our <span class="gradient-text">Journey</span>
-                </h1>
-                <p class="careers-message">
-                    We are soon announce lots of job updates here. For more details surely check weekly and follow us on
-                    LinkedIn and Instagram to stay updated.
-                </p>
-                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                    <a href="https://www.linkedin.com/company/krutix/" target="_blank" class="cta-btn-minimal"
-                        style="background: rgba(0, 243, 255, 0.1); border-color: var(--accent-cyan);">
-                        Follow on LinkedIn
-                    </a>
-                    <a href="https://instagram.com/krutix.ai" target="_blank" class="cta-btn-minimal"
-                        style="background: rgba(188, 19, 254, 0.1); border-color: var(--accent-purple);">
-                        Follow on Instagram
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="main-footer">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <h2>KRUTIX</h2>
-                <p>Building the digital nervous system for modern enterprises.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Solutions</h4>
-                <a href="index.html#services">Web Apps</a>
-                <a href="index.html#services">AI Agents</a>
-                <a href="index.html#services">Mobile Apps</a>
-            </div>
-            <div class="footer-col">
-                <h4>Company</h4>
-                <a href="about.html">About</a>
-                <a href="careers.html">Careers</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <div class="footer-col">
-                <h4>Social</h4>
-                <a href="https://instagram.com/krutix.ai" target="_blank">Instagram</a>
-                <a href="https://www.linkedin.com/company/krutix/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/orgs/Krutix-Agency/" target="_blank">GitHub</a>
-            </div>
+    <div class="cta-band">
+      <div>
+        <h2 class="sec-title" style="margin-bottom:10px">Don't see<br><span style="color:var(--cyan)">your role?</span>
+        </h2>
+        <p style="font-size:14px;color:var(--ink2)">Send us your work anyway. We hire for talent.</p>
+      </div><button class="btn-c" onclick="openApply('General Application','Open Role')">Send Your CV</button>
+    </div>
+    <footer>
+      <div class="ft">
+        <div>
+          <div class="flogo">KRU<span>T</span>IX</div>
+          <div class="fdesc">Building the digital nervous system for modern enterprises.</div>
         </div>
-        <div class="footer-bottom">
-            &copy; 2026 Krutix Agency. All rights reserved.
+        <div class="fcol">
+          <h4>Solutions</h4><a href="index.html#services">Web Apps</a><a
+            href="index.html#services">AI Agents</a><a href="index.html#services">Mobile Apps</a>
         </div>
+        <div class="fcol">
+          <h4>Company</h4><a href="about.html">About</a><a href="careers.html">Careers</a><a
+            href="contact.html">Contact</a>
+        </div>
+        <div class="fcol">
+          <h4>Social</h4><a href="https://instagram.com/krutix.ai" target="_blank">Instagram</a><a
+            href="https://linkedin.com/company/krutix" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+      <div class="fb">
+        <div class="fcopy">© 2026 Krutix Agency. All rights reserved.</div>
+      </div>
     </footer>
+  </div>
 
-    <script>
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Simple reveal animation
-        document.addEventListener('DOMContentLoaded', () => {
-            const content = document.querySelector('.careers-content');
-            content.style.opacity = '1';
-            content.style.transform = 'translateY(0)';
-        });
-    </script>
+  <script src="script.js"></script>
 </body>
 
 </html>
