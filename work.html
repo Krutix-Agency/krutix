@@ -34,7 +34,7 @@
 
   <!-- NAV -->
   <nav id="nav">
-    <div class="logo" href="index.html">KRU<span>T</span>IX</div>
+    <a href="index.html" class="logo">KRU<span>T</span>IX</a>
     <ul class="nav-links">
       <li><a href="index.html" id="nav-home">Home</a></li>
       <li><a href="index.html#services" id="nav-solutions">Solutions</a></li>
@@ -42,7 +42,7 @@
       <li><a href="about.html" id="nav-about">About</a></li>
       <li><a href="careers.html" id="nav-careers">Careers</a></li>
     </ul>
-    <button class="nav-cta" onclick="window.location.href='contact.html'">Get in Touch</button>
+    <button class="nav-cta" onclick="window.location.href='booking.html'">Book Free Consultation</button>
     <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
   </nav>
   <div class="mobile-menu" id="mobile-menu">
@@ -51,7 +51,7 @@
     <a href="work.html">Work</a>
     <a href="about.html">About</a>
     <a href="careers.html">Careers</a>
-    <a href="contact.html">Get in Touch</a>
+    <a href="booking.html">Book Free Consultation</a>
   </div>
 
   <!-- WORK -->
@@ -60,7 +60,7 @@
       <div class="grid-bg"></div>
       <div class="glow-orb orb1"></div>
       <p class="page-eyebrow">Case Studies</p>
-      <h1 class="page-title">Systems we've<br><span class="stroke">shipped.</span></h1>
+      <h1 class="page-title">Systems we've<br><span class="stroke" id="typed-shipped"></span></h1>
     </div>
     <div class="work-body">
       <div class="filter-row">
@@ -89,25 +89,25 @@
           <div
             style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:20px 0 16px">
             <div style="background:var(--bg3);border:1px solid var(--border2);border-radius:4px;padding:16px">
-              <div style="font-size:22px;font-weight:800;color:var(--cyan);letter-spacing:-1px">50K+</div>
+              <div style="font-size:22px;font-weight:800;color:var(--ink);letter-spacing:-1px">50K+</div>
               <div
                 style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);margin-top:4px">
                 Monthly Readers</div>
             </div>
             <div style="background:var(--bg3);border:1px solid var(--border2);border-radius:4px;padding:16px">
-              <div style="font-size:22px;font-weight:800;color:var(--cyan);letter-spacing:-1px">200+</div>
+              <div style="font-size:22px;font-weight:800;color:var(--ink);letter-spacing:-1px">200+</div>
               <div
                 style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);margin-top:4px">
                 Blog Posts</div>
             </div>
             <div style="background:var(--bg3);border:1px solid var(--border2);border-radius:4px;padding:16px">
-              <div style="font-size:22px;font-weight:800;color:var(--cyan);letter-spacing:-1px">95%</div>
+              <div style="font-size:22px;font-weight:800;color:var(--ink);letter-spacing:-1px">95%</div>
               <div
                 style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);margin-top:4px">
                 Recommendation Accuracy</div>
             </div>
             <div style="background:var(--bg3);border:1px solid var(--border2);border-radius:4px;padding:16px">
-              <div style="font-size:22px;font-weight:800;color:var(--cyan);letter-spacing:-1px">4.8★</div>
+              <div style="font-size:22px;font-weight:800;color:var(--ink);letter-spacing:-1px">4.8★</div>
               <div
                 style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);margin-top:4px">
                 User Rating</div>
@@ -244,20 +244,18 @@
     </div>
     <div class="cta-band">
       <div>
-        <h2 class="sec-title" style="margin-bottom:10px">Your project<br><span style="color:var(--cyan)">could be
-            next.</span></h2>
+        <h2 class="sec-title" style="margin-bottom:10px">Your project<br><span class="stroke">could be next.</span></h2>
         <p style="font-size:14px;color:var(--ink2)">Let's design something remarkable together.</p>
-      </div><button class="btn-c" onclick="window.location.href='contact.html'">Start a Project</button>
-    </div>
+      </div><button class="btn-c" onclick="window.location.href='booking.html'">START A PROJECT</button>    </div>
     <footer>
       <div class="ft">
         <div>
-          <div class="flogo">KRU<span>T</span>IX</div>
+          <a href="index.html" class="flogo">KRU<span>T</span>IX</a>
           <div class="fdesc">Building the digital nervous system for modern enterprises.</div>
         </div>
         <div class="fcol">
-          <h4>Solutions</h4><a href="index.html#services">Web Apps</a><a
-            href="index.html#services">AI Agents</a><a href="index.html#services">Mobile Apps</a>
+          <h4>Solutions</h4><a href="index.html#services">Web Apps</a><a href="index.html#services">AI Agents</a><a
+            href="index.html#services">Mobile Apps</a>
         </div>
         <div class="fcol">
           <h4>Company</h4><a href="about.html">About</a><a href="careers.html">Careers</a><a
@@ -272,11 +270,49 @@
         <div class="fcopy">© 2026 Krutix Agency. All rights reserved.</div>
       </div>
     </footer>
-  </div>
-    </footer>
-  </div>
+    <script src="script.js"></script>
+    <script src="ai-consultant.js"></script>
 
-  <script src="script.js"></script>
+    <!-- Chat Popup Widget -->
+    <div id="chat-popup" class="chat-popup">
+      <div class="chat-header">
+        <div class="chat-header-info">
+          <div class="chat-avatar">K</div>
+          <div>
+            <h3>KRUTIX AI</h3>
+            <p>Online</p>
+          </div>
+        </div>
+        <button class="close-chat" onclick="toggleChatPopup()">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6L6 18M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div id="chat-messages" class="chat-messages"></div>
+      <form class="chat-input-area" onsubmit="handleChat(event)">
+        <input type="text" id="chat-input" placeholder="Ask about KRUTIX..." autocomplete="off">
+        <button type="submit" class="send-btn">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </form>
+    </div>
+
+    <!-- Floating AI Button -->
+    <div class="ai-fab" onclick="toggleChatPopup()">
+      <div class="fab-pulse"></div>
+      <div class="fab-icon">
+        <svg viewBox="0 0 32 32" width="30" height="30">
+          <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-family="system-ui, sans-serif"
+            font-weight="900" font-size="20" fill="currentColor">K</text>
+        </svg>
+      </div>
+    </div>
+
 </body>
 
 </html>
