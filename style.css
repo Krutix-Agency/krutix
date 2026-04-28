@@ -1812,7 +1812,37 @@ footer {
 @media(max-width:768px) {
   .hero-stats {
     position: relative;
-    border-top: 1px solid var(--border)
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-x: visible;
+    width: 100%;
+  }
+
+  .hstat {
+    flex: 1 1 calc(50% - 1px);
+    min-width: 120px;
+    padding: 16px 12px;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hstat:nth-child(odd):last-child {
+    border-right: none;
+  }
+
+  .hstat:last-child {
+    border-right: 1px solid var(--border);
+    border-bottom: none;
+  }
+
+  .hstat-val {
+    font-size: 24px;
+  }
+
+  .hstat-lbl {
+    font-size: 8px;
   }
 
   .hero {
@@ -2050,4 +2080,4 @@ footer {
     bottom: 80px;
     right: 16px;
   }
-}
+}
