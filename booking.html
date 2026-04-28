@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Consultation | KRUTIX</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --cal-bg: #050510;
+      --cal-panel: #0a0a18;
+      --cal-accent: #00f3ff;
+      --cal-text: #ffffff;
+      --cal-muted: #a0a0b0;
+    }
+
+    .booking-container {
+      max-width: 960px;
+      margin: 40px auto 60px;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .booking-header {
+      max-width: 960px;
+      margin: 160px auto 0;
+      padding: 0 24px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    nav {
+      background: rgba(5, 5, 16, 0.95) !important;
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    @media (max-width: 900px) {
+      .booking-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .booking-container.success-mode {
+      grid-template-columns: 1fr;
+      max-width: 600px;
+    }
+
+    .booking-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .booking-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+      opacity: 0.3;
+    }
+
+    .cal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cal-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 8px;
+    }
+
+    .cal-day-label {
+      text-align: center;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--ink3);
+      padding-bottom: 8px;
+    }
+
+    .cal-day {
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: all 0.2s;
+      border: 1px solid transparent;
+      color: var(--ink2);
+    }
+
+    .cal-day:hover:not(.disabled) {
+      background: var(--cyan-dim);
+      border-color: var(--cyan-dim);
+      color: var(--cyan);
+    }
+
+    .cal-day.active {
+      background: var(--grad);
+      color: #000;
+      font-weight: 800;
+      border-radius: 4px;
+      box-shadow: 0 0 15px var(--cyan-glow);
+    }
+
+    .cal-day.today {
+      color: var(--cyan);
+      text-decoration: underline;
+    }
+
+    .cal-day.disabled {
+      opacity: 0.2;
+      cursor: not-allowed;
+    }
+
+    .slots-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .slot-item {
+      padding: 14px;
+      border: 1px solid var(--border2);
+      border-radius: 2px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 13px;
+      color: var(--ink);
+    }
+
+    .slot-item:hover {
+      border-color: var(--cyan);
+      background: var(--cyan-dim);
+    }
+
+    .slot-item.selected {
+      background: var(--cyan);
+      border-color: var(--cyan);
+      color: #000;
+      font-weight: 700;
+    }
+
+    .booking-summary {
+      position: sticky;
+      top: 100px;
+      height: fit-content;
+    }
+
+    .summary-title {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .summary-info {
+      font-size: 13px;
+      color: var(--ink2);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .summary-info b { color: var(--ink); }
+
+    .book-form {
+      display: none;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .book-form.active { display: flex; }
+
+    .form-group label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      color: var(--ink3);
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      background: var(--bg3);
+      border: 1px solid var(--border2);
+      padding: 12px;
+      color: var(--ink);
+      font-family: inherit;
+      border-radius: 2px;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--cyan);
+    }
+
+    .confirm-btn {
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    #loading-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(5, 5, 16, 0.8);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+
+    .spinner {
+      width: 30px;
+      height: 30px;
+      border: 2px solid var(--border2);
+      border-top-color: var(--cyan);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .success-screen {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+      animation: fadeIn 0.6s ease-out;
+    }
+
+    .success-screen.active {
+      display: flex;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .success-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--cyan-dim);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      color: var(--cyan);
+      box-shadow: 0 0 30px var(--cyan-dim);
+      animation: iconPulse 2s infinite ease-in-out;
+    }
+
+    @keyframes iconPulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 20px var(--cyan-dim); }
+      50% { transform: scale(1.1); box-shadow: 0 0 40px var(--cyan-dim); }
+    }
+
+    .success-screen h2 {
+      font-size: clamp(24px, 4vw, 36px);
+      margin-bottom: 12px;
+      color: var(--cyan);
+      letter-spacing: -1px;
+    }
+
+    .success-screen p {
+      max-width: 460px;
+      line-height: 1.8;
+      font-size: 14px;
+    }
+
+    .success-list {
+      text-align: left;
+      margin: 24px 0;
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .success-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--ink2);
+    }
+
+    .success-list li span {
+      color: var(--cyan);
+      font-weight: bold;
+    }
+
+    .nav-cta, .btn-c {
+      text-decoration: none !important;
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="index.html" class="logo">KRU<span>T</span>IX</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#services">Solutions</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="index.html" class="nav-cta">Go Back</a>
+  </nav>
+
+  <div class="page">
+    <div class="booking-header">
+      <h1 style="font-size: clamp(26px, 4.5vw, 42px); font-weight: 900; letter-spacing: -1.5px; margin-bottom: 8px;">Book your <span class="stroke">Consultation</span></h1>
+      <p class="muted" style="margin-bottom: 0px; font-size: 14px;">Select a slot to discuss your project architecture and automation needs.</p>
+    </div>
+
+    <div class="booking-container">
+      <div class="booking-main">
+
+        <div class="booking-card" id="main-card">
+          <div id="loading-overlay"><div class="spinner"></div></div>
+          
+          <div id="step-date">
+            <div class="cal-header">
+              <h3 id="current-month" style="font-size: 20px; font-weight: 800;"></h3>
+              <div style="display: flex; gap: 10px;">
+                <button onclick="changeMonth(-1)" class="btn-o" style="padding: 6px 12px;">&lt;</button>
+                <button onclick="changeMonth(1)" class="btn-o" style="padding: 6px 12px;">&gt;</button>
+              </div>
+            </div>
+            <div class="cal-grid" id="cal-grid">
+              <!-- JS will fill this -->
+            </div>
+          </div>
+
+          <div id="step-time" style="display: none;">
+            <div class="cal-header">
+              <button onclick="goToDate()" class="btn-o" style="padding: 6px 12px;">&lt; Back</button>
+              <h3 id="selected-date-label" style="font-size: 18px; font-weight: 800;"></h3>
+            </div>
+            <div class="slots-container" id="slots-container">
+              <!-- JS will fill this -->
+            </div>
+          </div>
+
+          <div id="step-form" style="display: none;">
+             <div class="cal-header">
+              <button onclick="goToTime()" class="btn-o" style="padding: 6px 12px;">&lt; Back</button>
+              <h3 style="font-size: 18px; font-weight: 800;">Confirm Details</h3>
+            </div>
+            <form class="book-form active" id="booking-form">
+              <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" id="user-name" placeholder="Arjun Kapoor" required>
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" id="user-email" placeholder="arjun@company.com" required>
+              </div>
+              <div class="form-group">
+                <label>Notes (Optional)</label>
+                <textarea id="user-notes" rows="4" placeholder="Tell us about your project..."></textarea>
+              </div>
+              <button type="submit" class="btn-c confirm-btn">Schedule Meeting →</button>
+            </form>
+          </div>
+
+          <div id="step-success" class="success-screen">
+            <div class="success-icon">
+              <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <h2>Booking Confirmed!</h2>
+            
+            <ul class="success-list">
+              <li><span>✓</span> Calendar invitation dispatched to your inbox.</li>
+              <li><span>✓</span> Google Meet link included in the invitation.</li>
+              <li><span>✓</span> Our team is preparing for your strategy session.</li>
+            </ul>
+
+            <p class="muted">We're ready to engineer your next digital breakthrough. See you soon!</p>
+            <br>
+            <a href="index.html" class="btn-c" style="padding: 14px 40px;">Return Home</a>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="booking-summary">
+        <div class="booking-card">
+          <div class="summary-title">Product Strategy Session</div>
+          <div class="summary-info">
+            <p>A 30-minute high-impact session to define your digital roadmap.</p>
+            <ul style="list-style: none; padding: 0; margin: 16px 0; color: var(--ink2); display: flex; flex-direction: column; gap: 8px;">
+              <li style="display: flex; gap: 8px;"><span style="color: var(--cyan)">•</span> Understand your idea and users</li>
+              <li style="display: flex; gap: 8px;"><span style="color: var(--cyan)">•</span> Choose the right tech and platform</li>
+              <li style="display: flex; gap: 8px;"><span style="color: var(--cyan)">•</span> Align on timeline and budget</li>
+              <li style="display: flex; gap: 8px;"><span style="color: var(--cyan)">•</span> Define next steps to ship your product</li>
+            </ul>
+            <hr style="border: 0; border-top: 1px solid var(--border); margin: 20px 0;">
+            <div id="summary-details">
+              <p>⏱ <b>30 Minutes</b></p>
+              <p>🌐 <b>Google Meet</b></p>
+              <p id="sum-date" style="display:none">📅 <b id="sum-date-val"></b></p>
+              <p id="sum-time" style="display:none">🕒 <b id="sum-time-val"></b></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="booking.js"></script>
+</body>
+</html>

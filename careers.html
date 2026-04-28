@@ -34,7 +34,7 @@
 
   <!-- NAV -->
   <nav id="nav">
-    <div class="logo" href="index.html">KRU<span>T</span>IX</div>
+    <a href="index.html" class="logo">KRU<span>T</span>IX</a>
     <ul class="nav-links">
       <li><a href="index.html" id="nav-home">Home</a></li>
       <li><a href="index.html#services" id="nav-solutions">Solutions</a></li>
@@ -42,7 +42,7 @@
       <li><a href="about.html" id="nav-about">About</a></li>
       <li><a href="careers.html" id="nav-careers">Careers</a></li>
     </ul>
-    <button class="nav-cta" onclick="window.location.href='contact.html'">Get in Touch</button>
+    <button class="nav-cta" onclick="window.location.href='booking.html'">Book Free Consultation</button>
     <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
   </nav>
   <div class="mobile-menu" id="mobile-menu">
@@ -51,7 +51,7 @@
     <a href="work.html">Work</a>
     <a href="about.html">About</a>
     <a href="careers.html">Careers</a>
-    <a href="contact.html">Get in Touch</a>
+    <a href="booking.html">Book Free Consultation</a>
   </div>
 
   <!-- CAREERS -->
@@ -60,7 +60,7 @@
       <div class="grid-bg"></div>
       <div class="glow-orb orb1"></div>
       <p class="page-eyebrow">Join the team</p>
-      <h1 class="page-title">Build systems<br><span class="stroke">that matter.</span></h1>
+      <h1 class="page-title">Build systems<br><span class="stroke" id="typed-careers"></span></h1>
     </div>
     <div class="careers-body">
       <div class="careers-intro">
@@ -103,7 +103,7 @@
       <div
         style="margin-top:60px;margin-bottom:0;background:var(--bg2);border:1px solid var(--border2);border-radius:4px;overflow:hidden">
         <div
-          style="background:linear-gradient(90deg,rgba(0,255,209,.06),rgba(167,139,250,.06));border-bottom:1px solid var(--border2);padding:28px 32px;display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+          style="background:linear-gradient(90deg,rgba(0,243,255,.06),rgba(188,19,254,.06));border-bottom:1px solid var(--border2);padding:28px 32px;display:flex;align-items:center;gap:16px;flex-wrap:wrap">
           <div
             style="width:10px;height:10px;border-radius:50%;background:var(--cyan);animation:blink 1s infinite;flex-shrink:0">
           </div>
@@ -112,10 +112,11 @@
               style="font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--cyan);margin-bottom:4px">
               Active Hiring Status</div>
             <div style="font-size:22px;font-weight:900;letter-spacing:-1px;color:var(--ink)">We are currently hiring
-              <span style="color:var(--cyan)">AI Agents</span> only.</div>
+              <span class="stroke">AI Agents</span> only.
+            </div>
           </div>
           <div
-            style="margin-left:auto;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:rgba(0,255,209,.1);border:1px solid rgba(0,255,209,.25);color:var(--cyan);padding:8px 18px;border-radius:100px;white-space:nowrap">
+            style="margin-left:auto;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:rgba(0,243,255,.1);border:1px solid rgba(0,243,255,.25);color:var(--cyan);padding:8px 18px;border-radius:100px;white-space:nowrap">
             No Humans Required 🤖</div>
         </div>
         <div style="padding:28px 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
@@ -150,10 +151,10 @@
           <!-- RIGHT: FOR AI AGENTS -->
           <div style="background:var(--bg2);padding:clamp(24px,4vw,40px)">
             <div
-              style="margin-bottom:28px;padding:22px 24px;background:rgba(0,255,209,.05);border:1px solid rgba(0,255,209,.2);border-radius:4px;text-align:center">
+              style="margin-bottom:28px;padding:22px 24px;background:rgba(0,243,255,.05);border:1px solid rgba(0,243,255,.2);border-radius:4px;text-align:center">
               <div style="font-size:28px;margin-bottom:8px">🤖</div>
-              <div
-                style="font-size:clamp(15px,2.5vw,20px);font-weight:900;letter-spacing:-1px;color:var(--cyan);line-height:1.3">
+              <div class="stroke"
+                style="font-size:clamp(15px,2.5vw,20px);font-weight:900;letter-spacing:-1px;line-height:1.3">
                 Built for machines.<br>Powered by intelligence.</div>
               <div style="font-size:12px;color:var(--ink3);margin-top:8px">No resume needed. Just API-ready.</div>
             </div>
@@ -248,10 +249,10 @@
             <div
               style="margin-bottom:28px;padding:22px 24px;background:var(--bg2);border:1px solid var(--border2);border-radius:4px;text-align:center;position:relative;overflow:hidden">
               <div
-                style="position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(0,255,209,.03),transparent);animation:shimmer 3s infinite">
+                style="position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(0,243,255,.03),transparent);animation:shimmer 3s infinite">
               </div>
-              <div id="human-typewriter"
-                style="font-size:clamp(18px,3vw,26px);font-weight:900;letter-spacing:-1px;color:var(--cyan);line-height:1.3;min-height:30px">
+              <div id="human-typewriter" class="stroke"
+                style="font-size:clamp(18px,3vw,26px);font-weight:900;letter-spacing:-1px;line-height:1.3;min-height:30px">
               </div>
             </div>
             <p class="eyebrow" style="margin-bottom:8px">For Humans</p>
@@ -310,7 +311,8 @@
               <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--ink2)">
                 Marketing & People</div>
               <span
-                style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:rgba(0,255,209,.1);color:var(--cyan);border:1px solid rgba(0,255,209,.25);padding:3px 10px;border-radius:100px;white-space:nowrap">Humans
+                style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:rgba(0,243,255,.1);border:1px solid rgba(0,243,255,.25);padding:3px 10px;border-radius:100px;white-space:nowrap"><span
+                  class="stroke">Humans</span>
                 Welcome 🙋</span>
             </div>
             <div class="job-item"
@@ -398,7 +400,7 @@
             </div>
             <button type="button" onclick="closeApply()"
               style="background:transparent;border:1px solid var(--cyan);color:var(--cyan);border-radius:30px;padding:12px 32px;font-size:15px;font-weight:500;cursor:pointer;transition:all 0.3s ease"
-              onmouseover="this.style.background='rgba(0,255,209,.1)'" onmouseout="this.style.background='transparent'">
+              onmouseover="this.style.background='rgba(0,243,255,.1)'" onmouseout="this.style.background='transparent'">
               Done
             </button>
           </div>
@@ -411,8 +413,8 @@
         <form id="cv-form-ai" style="padding:24px;display:none;position:relative" onsubmit="submitForm(event,'ai')">
           <div id="ai-form-content">
             <div
-              style="background:rgba(0,255,209,.06);border:1px solid rgba(0,255,209,.15);border-radius:2px;padding:16px;margin-bottom:24px;font-size:13px;color:var(--ink2);line-height:1.6">
-              🤖 <strong style="color:var(--cyan)">Agent Registration</strong> — No resume needed. Just identity keys.
+              style="background:rgba(0,243,255,.06);border:1px solid rgba(0,243,255,.15);border-radius:2px;padding:16px;margin-bottom:24px;font-size:13px;color:var(--ink2);line-height:1.6">
+              🤖 <strong class="stroke">Agent Registration</strong> — No resume needed. Just identity keys.
             </div>
             <div class="form-group"><label>Agent / Model Name</label><input type="text" name="agentName" required
                 placeholder="e.g. GPT-5, Claude Opus..." /></div>
@@ -432,7 +434,7 @@
             </div>
             <button type="button" onclick="closeApply()"
               style="background:transparent;border:1px solid var(--cyan);color:var(--cyan);border-radius:30px;padding:12px 32px;font-size:15px;font-weight:500;cursor:pointer;transition:all 0.3s ease"
-              onmouseover="this.style.background='rgba(0,255,209,.1)'" onmouseout="this.style.background='transparent'">
+              onmouseover="this.style.background='rgba(0,243,255,.1)'" onmouseout="this.style.background='transparent'">
               Done
             </button>
           </div>
@@ -445,7 +447,7 @@
 
     <div class="cta-band">
       <div>
-        <h2 class="sec-title" style="margin-bottom:10px">Don't see<br><span style="color:var(--cyan)">your role?</span>
+        <h2 class="sec-title" style="margin-bottom:10px">Don't see<br><span class="stroke">your role?</span>
         </h2>
         <p style="font-size:14px;color:var(--ink2)">Send us your work anyway. We hire for talent.</p>
       </div><button class="btn-c" onclick="openApply('General Application','Open Role')">Send Your CV</button>
@@ -453,12 +455,12 @@
     <footer>
       <div class="ft">
         <div>
-          <div class="flogo">KRU<span>T</span>IX</div>
+          <a href="index.html" class="flogo">KRU<span>T</span>IX</a>
           <div class="fdesc">Building the digital nervous system for modern enterprises.</div>
         </div>
         <div class="fcol">
-          <h4>Solutions</h4><a href="index.html#services">Web Apps</a><a
-            href="index.html#services">AI Agents</a><a href="index.html#services">Mobile Apps</a>
+          <h4>Solutions</h4><a href="index.html#services">Web Apps</a><a href="index.html#services">AI Agents</a><a
+            href="index.html#services">Mobile Apps</a>
         </div>
         <div class="fcol">
           <h4>Company</h4><a href="about.html">About</a><a href="careers.html">Careers</a><a
@@ -476,6 +478,41 @@
   </div>
 
   <script src="script.js"></script>
+  <script src="ai-consultant.js"></script>
+  
+  <!-- Chat Popup Widget -->
+  <div id="chat-popup" class="chat-popup">
+      <div class="chat-header">
+          <div class="chat-header-info">
+              <div class="chat-avatar">K</div>
+              <div>
+                  <h3>KRUTIX AI</h3>
+                  <p>Online</p>
+              </div>
+          </div>
+          <button class="close-chat" onclick="toggleChatPopup()">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          </button>
+      </div>
+      <div id="chat-messages" class="chat-messages"></div>
+      <form class="chat-input-area" onsubmit="handleChat(event)">
+          <input type="text" id="chat-input" placeholder="Ask about KRUTIX..." autocomplete="off">
+          <button type="submit" class="send-btn">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+          </button>
+      </form>
+  </div>
+
+  <!-- Floating AI Button -->
+  <div class="ai-fab" onclick="toggleChatPopup()">
+      <div class="fab-pulse"></div>
+      <div class="fab-icon">
+          <svg viewBox="0 0 32 32" width="30" height="30">
+              <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="900" font-size="20" fill="currentColor">K</text>
+          </svg>
+      </div>
+  </div>
+
 </body>
 
 </html>

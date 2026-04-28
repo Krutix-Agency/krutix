@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>404 — Page Not Found | KRUTIX</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .error-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      padding: 40px 20px;
+    }
+
+    .error-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,255,209,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,209,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    .error-glow {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,255,209,0.06) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .error-content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+    }
+
+    .error-code {
+      font-size: clamp(120px, 20vw, 200px);
+      font-weight: 900;
+      letter-spacing: -8px;
+      line-height: 1;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, var(--cyan) 0%, var(--purple) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 40px rgba(0,255,209,0.2));
+    }
+
+    .error-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .error-label::before,
+    .error-label::after {
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: var(--cyan);
+      opacity: 0.4;
+    }
+
+    .error-title {
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 16px;
+      letter-spacing: -1px;
+      line-height: 1.2;
+    }
+
+    .error-desc {
+      font-size: 15px;
+      color: var(--ink2);
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+
+    .error-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .error-terminal {
+      margin: 40px auto 0;
+      max-width: 400px;
+      background: var(--bg2);
+      border: 1px solid var(--border2);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .error-tbar {
+      padding: 10px 14px;
+      background: var(--bg3);
+      border-bottom: 1px solid var(--border2);
+      display: flex;
+      gap: 6px;
+    }
+
+    .error-tdot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .error-tbody {
+      padding: 16px 20px;
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      color: var(--ink2);
+      line-height: 2;
+      text-align: left;
+    }
+
+    .error-tbody .td { color: var(--cyan); }
+    .error-tbody .te { color: #ff6b6b; }
+    .error-tbody .tc { color: var(--ink); }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .cursor { animation: blink 1s infinite; color: var(--cyan); }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="index.html" class="logo">KRU<span>T</span>IX</a>
+    <ul class="nav-links">
+      <li><a href="index.html" id="nav-home">Home</a></li>
+      <li><a href="index.html#services" id="nav-solutions">Solutions</a></li>
+      <li><a href="work.html" id="nav-work">Work</a></li>
+      <li><a href="about.html" id="nav-about">About</a></li>
+      <li><a href="careers.html" id="nav-careers">Careers</a></li>
+    </ul>
+    <button class="nav-cta" onclick="window.location.href='booking.html'">Book Free Consultation</button>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="index.html#services">Solutions</a>
+    <a href="work.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="careers.html">Careers</a>
+    <a href="booking.html">Book Free Consultation</a>
+  </div>
+
+  <!-- 404 CONTENT -->
+  <div class="error-page">
+    <div class="error-grid"></div>
+    <div class="error-glow"></div>
+
+    <div class="error-content">
+      <div class="error-code">404</div>
+      <div class="error-label">Page Not Found</div>
+      <h1 class="error-title">Looks like this page<br><span class="stroke">doesn't exist.</span></h1>
+      <p class="error-desc">The URL you entered might be incorrect, or the page<br>may have been moved or deleted.</p>
+
+      <div class="error-btns">
+        <button class="btn-c" onclick="window.location.href='index.html'">Go Home</button>
+        <button class="btn-o" onclick="window.location.href='contact.html'">Contact Us →</button>
+      </div>
+
+      <div class="error-terminal">
+        <div class="error-tbar">
+          <div class="error-tdot" style="background:#ff5f57"></div>
+          <div class="error-tdot" style="background:#febc2e"></div>
+          <div class="error-tdot" style="background:#28c840"></div>
+        </div>
+        <div class="error-tbody">
+          <span class="td">$</span> <span class="tc">GET</span> /this-page<br>
+          <span class="td">→</span> Status: <span class="te">404 Not Found</span><br>
+          <span class="td">→</span> Redirecting to safety...<br>
+          <span class="td">$</span> <span class="cursor">|</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="ai-consultant.js"></script>
+
+</body>
+
+</html>

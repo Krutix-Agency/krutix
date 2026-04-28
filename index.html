@@ -34,7 +34,7 @@
 
   <!-- NAV -->
   <nav id="nav">
-    <div class="logo" href="index.html">KRU<span>T</span>IX</div>
+    <a href="index.html" class="logo">KRU<span>T</span>IX</a>
     <ul class="nav-links">
       <li><a href="index.html" id="nav-home">Home</a></li>
       <li><a href="#services" id="nav-solutions">Solutions</a></li>
@@ -42,7 +42,7 @@
       <li><a href="about.html" id="nav-about">About</a></li>
       <li><a href="careers.html" id="nav-careers">Careers</a></li>
     </ul>
-    <button class="nav-cta" onclick="window.location.href='contact.html'">Get in Touch</button>
+    <button class="nav-cta" onclick="window.location.href='booking.html'">Book Free Consultation</button>
     <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
   </nav>
   <div class="mobile-menu" id="mobile-menu">
@@ -51,7 +51,7 @@
     <a href="work.html">Work</a>
     <a href="about.html">About</a>
     <a href="careers.html">Careers</a>
-    <a href="contact.html">Get in Touch</a>
+    <a href="booking.html">Book Free Consultation</a>
   </div>
 
   <!-- HOME -->
@@ -60,16 +60,19 @@
       <div class="grid-bg"></div>
       <div class="glow-orb orb1"></div>
       <div class="glow-orb orb2"></div>
+      <div class="glow-orb orb3"></div>
       <canvas id="particles-canvas" style="position:absolute;inset:0;pointer-events:none;z-index:0"></canvas>
-      <div class="hero-badge">Systems Online</div>
-      <h1 class="hero-title" style="position:relative;z-index:1">We build<br><span class="stroke"
-          id="typed-text"></span><span id="typed-cursor" style="color:var(--cyan)">|</span><br><span class="muted">not
-          just websites.</span></h1>
-      <p class="hero-sub" style="position:relative;z-index:1">AI agents, web apps & mobile systems engineered to run
-        your business autonomously — 24 hours, 7 days.</p>
-      <div class="hero-btns">
-        <button class="btn-c" onclick="window.location.href='#services'">Explore Solutions</button>
-        <button class="btn-o" onclick="window.location.href='work.html'">View Case Studies →</button>
+      <div class="hero-content">
+        <div class="hero-badge">Systems Online</div>
+        <h1 class="hero-title" style="position:relative;z-index:1">We build<br><span class="stroke"
+            id="typed-text"></span><span id="typed-cursor" style="color:var(--cyan)">|</span><br><span class="muted">not
+            just websites.</span></h1>
+        <p class="hero-sub" style="position:relative;z-index:1">AI agents, web apps & mobile systems engineered to run
+          your business autonomously — 24 hours, 7 days.</p>
+        <div class="hero-btns">
+          <button class="btn-c" onclick="window.location.href='#services'">Explore Solutions</button>
+          <button class="btn-o" onclick="window.location.href='work.html'">View Case Studies →</button>
+        </div>
       </div>
       <div class="hero-stats">
         <div class="hstat">
@@ -171,8 +174,8 @@
             <div class="pstep"><span class="pnum">02</span>
               <div>
                 <div class="pname">Design</div>
-                <div class="ptext">Architecting bespoke AI agents and digital systems tailored to your exact context.
-                </div>
+                <div class="ptext">Architecting bespoke AI agents and <span class="stroke"
+                    style="font-weight:600">digital systems</span> tailored to your exact context.</div>
               </div>
             </div>
             <div class="pstep"><span class="pnum">03</span>
@@ -237,22 +240,21 @@
 
     <div class="cta-band">
       <div>
-        <h2 class="sec-title" style="margin-bottom:10px">Let's build your<br><span style="color:var(--cyan)">digital
-            system.</span></h2>
+        <h2 class="sec-title" style="margin-bottom:10px">Let's build your<br><span class="stroke">digital system.</span>
+        </h2>
         <p style="font-size:14px;color:var(--ink2)">Tell us about your business. We'll design the architecture.</p>
       </div>
-      <button class="btn-c" onclick="window.location.href='contact.html'">Start a Project</button>
+      <button class="btn-c" onclick="window.location.href='booking.html'">START A PROJECT</button>
     </div>
 
     <footer>
       <div class="ft">
         <div>
-          <div class="flogo">KRU<span>T</span>IX</div>
+          <a href="index.html" class="flogo">KRU<span>T</span>IX</a>
           <div class="fdesc">Building the digital nervous system for modern enterprises.</div>
         </div>
         <div class="fcol">
-          <h4>Solutions</h4><a href="#services">Web Apps</a><a
-            href="#services">AI Agents</a><a href="#services">Mobile
+          <h4>Solutions</h4><a href="#services">Web Apps</a><a href="#services">AI Agents</a><a href="#services">Mobile
             Apps</a><a href="#services">Digital Presence</a>
         </div>
         <div class="fcol">
@@ -270,9 +272,42 @@
         <div class="fsoc"><a>Privacy</a><a>Terms</a></div>
       </div>
     </footer>
-  </div>
+    <!-- Chat Popup Widget -->
+    <div id="chat-popup" class="chat-popup">
+        <div class="chat-header">
+            <div class="chat-header-info">
+                <div class="chat-avatar">K</div>
+                <div>
+                    <h3>KRUTIX AI</h3>
+                    <p>Online</p>
+                </div>
+            </div>
+            <button class="close-chat" onclick="toggleChatPopup()">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </button>
+        </div>
+        <div id="chat-messages" class="chat-messages"></div>
+        <form class="chat-input-area" onsubmit="handleChat(event)">
+            <input type="text" id="chat-input" placeholder="Ask about KRUTIX..." autocomplete="off">
+            <button type="submit" class="send-btn">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+        </form>
+    </div>
+
+    <!-- Floating AI Button -->
+    <div class="ai-fab" onclick="toggleChatPopup()">
+        <div class="fab-pulse"></div>
+        <div class="fab-icon">
+            <svg viewBox="0 0 32 32" width="30" height="30">
+                <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="900" font-size="20" fill="currentColor">K</text>
+            </svg>
+        </div>
+    </div>
 
   <script src="script.js"></script>
+  <script src="ai-consultant.js"></script>
+
 </body>
 
 </html>
